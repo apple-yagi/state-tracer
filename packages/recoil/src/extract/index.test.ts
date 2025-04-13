@@ -4,7 +4,7 @@ import { describe, it } from "node:test";
 import { defineIFFCreator } from "@mizdra/inline-fixture-files";
 import { randomUUID } from "node:crypto";
 import dedent from "dedent";
-import { extractAtomsAndSelectors } from "./index.ts";
+import { extractAtomsAndSelectorsWithDeps } from "./index.ts";
 
 const fixtureDir = join(tmpdir(), "@state-tracer/recoil");
 const createIFF = defineIFFCreator({
@@ -30,21 +30,25 @@ describe("extract", () => {
                 return count * 2;
               },
             });
+
+						export const quadrupleCountState = atom({
+							key: 'doubleCountAtomState',
+							default: selector({
+								key: 'quadrupleCountState',
+								get: ({ get }) => {
+									const count = get(doubleCountState);
+									return count * 2;
+								},
+							}),
+						});
           `,
 			},
 		});
 
-		const result = extractAtomsAndSelectors(iff.paths["src/state.js"]);
+		const result = extractAtomsAndSelectorsWithDeps(iff.paths["src/state.js"]);
 
-		context.assert.snapshot(
-			{
-				atoms: Array.from(result.atoms),
-				selectors: Array.from(result.selectors),
-				nodeList: result.nodeList,
-			},
-			{
-				serializers: [(value) => JSON.stringify(value, null, 2)],
-			},
-		);
+		context.assert.snapshot(result, {
+			serializers: [(value) => JSON.stringify(value, null, 2)],
+		});
 	});
 });

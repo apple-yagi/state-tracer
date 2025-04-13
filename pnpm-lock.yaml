@@ -20,6 +20,9 @@ importers:
 
   packages/recoil:
     dependencies:
+      oxc-parser:
+        specifier: ^0.63.0
+        version: 0.63.0
       oxc-walker:
         specifier: ^0.2.4
         version: 0.2.4(oxc-parser@0.63.0)

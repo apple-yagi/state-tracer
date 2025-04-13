@@ -12,7 +12,8 @@
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
 	"peerDependencies": {
-		"oxc-walker": "^0.2.4"
+		"oxc-walker": "^0.2.4",
+		"oxc-parser": "^0.63.0"
 	},
 	"devDependencies": {
 		"@mizdra/inline-fixture-files": "^2.1.1",
