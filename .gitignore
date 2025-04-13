@@ -1,0 +1,15 @@
+# dist
+dist/
+
+# Logs
+*.log
+.pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/

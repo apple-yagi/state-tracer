@@ -1,0 +1,14 @@
+{
+  "name": "@state-tracer/recoil",
+  "version": "0.0.1",
+  "description": "Visualize and trace state dependencies in Recoil with an interactive data flow graph.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "recoil"
+  ],
+  "author": "apple-yagi",
+  "license": "MIT",
+  "packageManager": "pnpm@10.8.0"
+}
