@@ -1,18 +1,21 @@
 {
-  "name": "@state-tracer/recoil",
-  "version": "0.0.1",
-  "description": "Visualize and trace state dependencies in Recoil with an interactive data flow graph.",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "recoil"
-  ],
-  "author": "apple-yagi",
-  "license": "MIT",
-  "packageManager": "pnpm@10.8.0",
-  "peerDependencies": {
-    "oxc-walker": "^0.2.4"
-  }
+	"name": "@state-tracer/recoil",
+	"version": "0.0.1",
+	"description": "Visualize and trace state dependencies in Recoil with an interactive data flow graph.",
+	"type": "module",
+	"scripts": {
+		"test": "node --experimental-strip-types --test src/**/*.test.ts",
+		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
+	},
+	"keywords": ["recoil"],
+	"author": "apple-yagi",
+	"license": "MIT",
+	"packageManager": "pnpm@10.8.0",
+	"peerDependencies": {
+		"oxc-walker": "^0.2.4"
+	},
+	"devDependencies": {
+		"@mizdra/inline-fixture-files": "^2.1.1",
+		"dedent": "^1.5.3"
+	}
 }

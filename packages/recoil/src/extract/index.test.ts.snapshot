@@ -1,0 +1,2379 @@
+exports[`extract > should extract atoms and selectors 1`] = `
+{
+  "atoms": [
+    "countState"
+  ],
+  "selectors": [
+    "doubleCountState"
+  ],
+  "nodeList": [
+    {
+      "type": "Program",
+      "start": 0,
+      "end": 272,
+      "body": [
+        {
+          "type": "ImportDeclaration",
+          "start": 0,
+          "end": 40,
+          "specifiers": [
+            {
+              "type": "ImportSpecifier",
+              "start": 9,
+              "end": 13,
+              "imported": {
+                "type": "Identifier",
+                "start": 9,
+                "end": 13,
+                "name": "atom"
+              },
+              "local": {
+                "type": "Identifier",
+                "start": 9,
+                "end": 13,
+                "name": "atom"
+              }
+            },
+            {
+              "type": "ImportSpecifier",
+              "start": 15,
+              "end": 23,
+              "imported": {
+                "type": "Identifier",
+                "start": 15,
+                "end": 23,
+                "name": "selector"
+              },
+              "local": {
+                "type": "Identifier",
+                "start": 15,
+                "end": 23,
+                "name": "selector"
+              }
+            }
+          ],
+          "source": {
+            "type": "Literal",
+            "start": 31,
+            "end": 39,
+            "value": "recoil",
+            "raw": "\\"recoil\\""
+          },
+          "attributes": []
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 42,
+          "end": 113,
+          "declaration": {
+            "type": "VariableDeclaration",
+            "start": 49,
+            "end": 113,
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "start": 55,
+                "end": 112,
+                "id": {
+                  "type": "Identifier",
+                  "start": 55,
+                  "end": 65,
+                  "name": "countState"
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "start": 68,
+                  "end": 112,
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 68,
+                    "end": 72,
+                    "name": "atom"
+                  },
+                  "arguments": [
+                    {
+                      "type": "ObjectExpression",
+                      "start": 73,
+                      "end": 111,
+                      "properties": [
+                        {
+                          "type": "Property",
+                          "start": 77,
+                          "end": 94,
+                          "method": false,
+                          "shorthand": false,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 77,
+                            "end": 80,
+                            "name": "key"
+                          },
+                          "value": {
+                            "type": "Literal",
+                            "start": 82,
+                            "end": 94,
+                            "value": "countState",
+                            "raw": "'countState'"
+                          },
+                          "kind": "init"
+                        },
+                        {
+                          "type": "Property",
+                          "start": 98,
+                          "end": 108,
+                          "method": false,
+                          "shorthand": false,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 98,
+                            "end": 105,
+                            "name": "default"
+                          },
+                          "value": {
+                            "type": "Literal",
+                            "start": 107,
+                            "end": 108,
+                            "value": 0,
+                            "raw": "0"
+                          },
+                          "kind": "init"
+                        }
+                      ]
+                    }
+                  ],
+                  "optional": false
+                }
+              }
+            ],
+            "kind": "const"
+          },
+          "specifiers": [],
+          "source": null,
+          "attributes": []
+        },
+        {
+          "type": "ExportNamedDeclaration",
+          "start": 115,
+          "end": 272,
+          "declaration": {
+            "type": "VariableDeclaration",
+            "start": 122,
+            "end": 272,
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "start": 128,
+                "end": 271,
+                "id": {
+                  "type": "Identifier",
+                  "start": 128,
+                  "end": 144,
+                  "name": "doubleCountState"
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "start": 147,
+                  "end": 271,
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 147,
+                    "end": 155,
+                    "name": "selector"
+                  },
+                  "arguments": [
+                    {
+                      "type": "ObjectExpression",
+                      "start": 156,
+                      "end": 270,
+                      "properties": [
+                        {
+                          "type": "Property",
+                          "start": 160,
+                          "end": 183,
+                          "method": false,
+                          "shorthand": false,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 160,
+                            "end": 163,
+                            "name": "key"
+                          },
+                          "value": {
+                            "type": "Literal",
+                            "start": 165,
+                            "end": 183,
+                            "value": "doubleCountState",
+                            "raw": "'doubleCountState'"
+                          },
+                          "kind": "init"
+                        },
+                        {
+                          "type": "Property",
+                          "start": 187,
+                          "end": 267,
+                          "method": false,
+                          "shorthand": false,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 187,
+                            "end": 190,
+                            "name": "get"
+                          },
+                          "value": {
+                            "type": "ArrowFunctionExpression",
+                            "start": 192,
+                            "end": 267,
+                            "id": null,
+                            "expression": false,
+                            "generator": false,
+                            "async": false,
+                            "params": [
+                              {
+                                "type": "ObjectPattern",
+                                "start": 193,
+                                "end": 200,
+                                "properties": [
+                                  {
+                                    "type": "Property",
+                                    "start": 195,
+                                    "end": 198,
+                                    "method": false,
+                                    "shorthand": true,
+                                    "computed": false,
+                                    "key": {
+                                      "type": "Identifier",
+                                      "start": 195,
+                                      "end": 198,
+                                      "name": "get"
+                                    },
+                                    "value": {
+                                      "type": "Identifier",
+                                      "start": 195,
+                                      "end": 198,
+                                      "name": "get"
+                                    },
+                                    "kind": "init"
+                                  }
+                                ]
+                              }
+                            ],
+                            "body": {
+                              "type": "BlockStatement",
+                              "start": 205,
+                              "end": 267,
+                              "body": [
+                                {
+                                  "type": "VariableDeclaration",
+                                  "start": 211,
+                                  "end": 241,
+                                  "declarations": [
+                                    {
+                                      "type": "VariableDeclarator",
+                                      "start": 217,
+                                      "end": 240,
+                                      "id": {
+                                        "type": "Identifier",
+                                        "start": 217,
+                                        "end": 222,
+                                        "name": "count"
+                                      },
+                                      "init": {
+                                        "type": "CallExpression",
+                                        "start": 225,
+                                        "end": 240,
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "start": 225,
+                                          "end": 228,
+                                          "name": "get"
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Identifier",
+                                            "start": 229,
+                                            "end": 239,
+                                            "name": "countState"
+                                          }
+                                        ],
+                                        "optional": false
+                                      }
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                {
+                                  "type": "ReturnStatement",
+                                  "start": 246,
+                                  "end": 263,
+                                  "argument": {
+                                    "type": "BinaryExpression",
+                                    "start": 253,
+                                    "end": 262,
+                                    "left": {
+                                      "type": "Identifier",
+                                      "start": 253,
+                                      "end": 258,
+                                      "name": "count"
+                                    },
+                                    "operator": "*",
+                                    "right": {
+                                      "type": "Literal",
+                                      "start": 261,
+                                      "end": 262,
+                                      "value": 2,
+                                      "raw": "2"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "kind": "init"
+                        }
+                      ]
+                    }
+                  ],
+                  "optional": false
+                }
+              }
+            ],
+            "kind": "const"
+          },
+          "specifiers": [],
+          "source": null,
+          "attributes": []
+        }
+      ],
+      "sourceType": "module",
+      "hashbang": null
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 0,
+      "end": 40,
+      "specifiers": [
+        {
+          "type": "ImportSpecifier",
+          "start": 9,
+          "end": 13,
+          "imported": {
+            "type": "Identifier",
+            "start": 9,
+            "end": 13,
+            "name": "atom"
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 9,
+            "end": 13,
+            "name": "atom"
+          }
+        },
+        {
+          "type": "ImportSpecifier",
+          "start": 15,
+          "end": 23,
+          "imported": {
+            "type": "Identifier",
+            "start": 15,
+            "end": 23,
+            "name": "selector"
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 15,
+            "end": 23,
+            "name": "selector"
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "start": 31,
+        "end": 39,
+        "value": "recoil",
+        "raw": "\\"recoil\\""
+      },
+      "attributes": []
+    },
+    {
+      "type": "ImportSpecifier",
+      "start": 9,
+      "end": 13,
+      "imported": {
+        "type": "Identifier",
+        "start": 9,
+        "end": 13,
+        "name": "atom"
+      },
+      "local": {
+        "type": "Identifier",
+        "start": 9,
+        "end": 13,
+        "name": "atom"
+      }
+    },
+    {
+      "type": "Identifier",
+      "start": 9,
+      "end": 13,
+      "name": "atom"
+    },
+    {
+      "type": "Identifier",
+      "start": 9,
+      "end": 13,
+      "name": "atom"
+    },
+    {
+      "type": "ImportSpecifier",
+      "start": 15,
+      "end": 23,
+      "imported": {
+        "type": "Identifier",
+        "start": 15,
+        "end": 23,
+        "name": "selector"
+      },
+      "local": {
+        "type": "Identifier",
+        "start": 15,
+        "end": 23,
+        "name": "selector"
+      }
+    },
+    {
+      "type": "Identifier",
+      "start": 15,
+      "end": 23,
+      "name": "selector"
+    },
+    {
+      "type": "Identifier",
+      "start": 15,
+      "end": 23,
+      "name": "selector"
+    },
+    {
+      "type": "Literal",
+      "start": 31,
+      "end": 39,
+      "value": "recoil",
+      "raw": "\\"recoil\\""
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 42,
+      "end": 113,
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 49,
+        "end": 113,
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 55,
+            "end": 112,
+            "id": {
+              "type": "Identifier",
+              "start": 55,
+              "end": 65,
+              "name": "countState"
+            },
+            "init": {
+              "type": "CallExpression",
+              "start": 68,
+              "end": 112,
+              "callee": {
+                "type": "Identifier",
+                "start": 68,
+                "end": 72,
+                "name": "atom"
+              },
+              "arguments": [
+                {
+                  "type": "ObjectExpression",
+                  "start": 73,
+                  "end": 111,
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "start": 77,
+                      "end": 94,
+                      "method": false,
+                      "shorthand": false,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 77,
+                        "end": 80,
+                        "name": "key"
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "start": 82,
+                        "end": 94,
+                        "value": "countState",
+                        "raw": "'countState'"
+                      },
+                      "kind": "init"
+                    },
+                    {
+                      "type": "Property",
+                      "start": 98,
+                      "end": 108,
+                      "method": false,
+                      "shorthand": false,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 98,
+                        "end": 105,
+                        "name": "default"
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "start": 107,
+                        "end": 108,
+                        "value": 0,
+                        "raw": "0"
+                      },
+                      "kind": "init"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            }
+          }
+        ],
+        "kind": "const"
+      },
+      "specifiers": [],
+      "source": null,
+      "attributes": []
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 49,
+      "end": 113,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 55,
+          "end": 112,
+          "id": {
+            "type": "Identifier",
+            "start": 55,
+            "end": 65,
+            "name": "countState"
+          },
+          "init": {
+            "type": "CallExpression",
+            "start": 68,
+            "end": 112,
+            "callee": {
+              "type": "Identifier",
+              "start": 68,
+              "end": 72,
+              "name": "atom"
+            },
+            "arguments": [
+              {
+                "type": "ObjectExpression",
+                "start": 73,
+                "end": 111,
+                "properties": [
+                  {
+                    "type": "Property",
+                    "start": 77,
+                    "end": 94,
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 77,
+                      "end": 80,
+                      "name": "key"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "start": 82,
+                      "end": 94,
+                      "value": "countState",
+                      "raw": "'countState'"
+                    },
+                    "kind": "init"
+                  },
+                  {
+                    "type": "Property",
+                    "start": 98,
+                    "end": 108,
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 98,
+                      "end": 105,
+                      "name": "default"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "start": 107,
+                      "end": 108,
+                      "value": 0,
+                      "raw": "0"
+                    },
+                    "kind": "init"
+                  }
+                ]
+              }
+            ],
+            "optional": false
+          }
+        }
+      ],
+      "kind": "const"
+    },
+    {
+      "type": "VariableDeclarator",
+      "start": 55,
+      "end": 112,
+      "id": {
+        "type": "Identifier",
+        "start": 55,
+        "end": 65,
+        "name": "countState"
+      },
+      "init": {
+        "type": "CallExpression",
+        "start": 68,
+        "end": 112,
+        "callee": {
+          "type": "Identifier",
+          "start": 68,
+          "end": 72,
+          "name": "atom"
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "start": 73,
+            "end": 111,
+            "properties": [
+              {
+                "type": "Property",
+                "start": 77,
+                "end": 94,
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 77,
+                  "end": 80,
+                  "name": "key"
+                },
+                "value": {
+                  "type": "Literal",
+                  "start": 82,
+                  "end": 94,
+                  "value": "countState",
+                  "raw": "'countState'"
+                },
+                "kind": "init"
+              },
+              {
+                "type": "Property",
+                "start": 98,
+                "end": 108,
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 98,
+                  "end": 105,
+                  "name": "default"
+                },
+                "value": {
+                  "type": "Literal",
+                  "start": 107,
+                  "end": 108,
+                  "value": 0,
+                  "raw": "0"
+                },
+                "kind": "init"
+              }
+            ]
+          }
+        ],
+        "optional": false
+      }
+    },
+    {
+      "type": "Identifier",
+      "start": 55,
+      "end": 65,
+      "name": "countState"
+    },
+    {
+      "type": "CallExpression",
+      "start": 68,
+      "end": 112,
+      "callee": {
+        "type": "Identifier",
+        "start": 68,
+        "end": 72,
+        "name": "atom"
+      },
+      "arguments": [
+        {
+          "type": "ObjectExpression",
+          "start": 73,
+          "end": 111,
+          "properties": [
+            {
+              "type": "Property",
+              "start": 77,
+              "end": 94,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 77,
+                "end": 80,
+                "name": "key"
+              },
+              "value": {
+                "type": "Literal",
+                "start": 82,
+                "end": 94,
+                "value": "countState",
+                "raw": "'countState'"
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 98,
+              "end": 108,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 98,
+                "end": 105,
+                "name": "default"
+              },
+              "value": {
+                "type": "Literal",
+                "start": 107,
+                "end": 108,
+                "value": 0,
+                "raw": "0"
+              },
+              "kind": "init"
+            }
+          ]
+        }
+      ],
+      "optional": false
+    },
+    {
+      "type": "Identifier",
+      "start": 68,
+      "end": 72,
+      "name": "atom"
+    },
+    {
+      "type": "ObjectExpression",
+      "start": 73,
+      "end": 111,
+      "properties": [
+        {
+          "type": "Property",
+          "start": 77,
+          "end": 94,
+          "method": false,
+          "shorthand": false,
+          "computed": false,
+          "key": {
+            "type": "Identifier",
+            "start": 77,
+            "end": 80,
+            "name": "key"
+          },
+          "value": {
+            "type": "Literal",
+            "start": 82,
+            "end": 94,
+            "value": "countState",
+            "raw": "'countState'"
+          },
+          "kind": "init"
+        },
+        {
+          "type": "Property",
+          "start": 98,
+          "end": 108,
+          "method": false,
+          "shorthand": false,
+          "computed": false,
+          "key": {
+            "type": "Identifier",
+            "start": 98,
+            "end": 105,
+            "name": "default"
+          },
+          "value": {
+            "type": "Literal",
+            "start": 107,
+            "end": 108,
+            "value": 0,
+            "raw": "0"
+          },
+          "kind": "init"
+        }
+      ]
+    },
+    {
+      "type": "Property",
+      "start": 77,
+      "end": 94,
+      "method": false,
+      "shorthand": false,
+      "computed": false,
+      "key": {
+        "type": "Identifier",
+        "start": 77,
+        "end": 80,
+        "name": "key"
+      },
+      "value": {
+        "type": "Literal",
+        "start": 82,
+        "end": 94,
+        "value": "countState",
+        "raw": "'countState'"
+      },
+      "kind": "init"
+    },
+    {
+      "type": "Identifier",
+      "start": 77,
+      "end": 80,
+      "name": "key"
+    },
+    {
+      "type": "Literal",
+      "start": 82,
+      "end": 94,
+      "value": "countState",
+      "raw": "'countState'"
+    },
+    {
+      "type": "Property",
+      "start": 98,
+      "end": 108,
+      "method": false,
+      "shorthand": false,
+      "computed": false,
+      "key": {
+        "type": "Identifier",
+        "start": 98,
+        "end": 105,
+        "name": "default"
+      },
+      "value": {
+        "type": "Literal",
+        "start": 107,
+        "end": 108,
+        "value": 0,
+        "raw": "0"
+      },
+      "kind": "init"
+    },
+    {
+      "type": "Identifier",
+      "start": 98,
+      "end": 105,
+      "name": "default"
+    },
+    {
+      "type": "Literal",
+      "start": 107,
+      "end": 108,
+      "value": 0,
+      "raw": "0"
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 115,
+      "end": 272,
+      "declaration": {
+        "type": "VariableDeclaration",
+        "start": 122,
+        "end": 272,
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 128,
+            "end": 271,
+            "id": {
+              "type": "Identifier",
+              "start": 128,
+              "end": 144,
+              "name": "doubleCountState"
+            },
+            "init": {
+              "type": "CallExpression",
+              "start": 147,
+              "end": 271,
+              "callee": {
+                "type": "Identifier",
+                "start": 147,
+                "end": 155,
+                "name": "selector"
+              },
+              "arguments": [
+                {
+                  "type": "ObjectExpression",
+                  "start": 156,
+                  "end": 270,
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "start": 160,
+                      "end": 183,
+                      "method": false,
+                      "shorthand": false,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 160,
+                        "end": 163,
+                        "name": "key"
+                      },
+                      "value": {
+                        "type": "Literal",
+                        "start": 165,
+                        "end": 183,
+                        "value": "doubleCountState",
+                        "raw": "'doubleCountState'"
+                      },
+                      "kind": "init"
+                    },
+                    {
+                      "type": "Property",
+                      "start": 187,
+                      "end": 267,
+                      "method": false,
+                      "shorthand": false,
+                      "computed": false,
+                      "key": {
+                        "type": "Identifier",
+                        "start": 187,
+                        "end": 190,
+                        "name": "get"
+                      },
+                      "value": {
+                        "type": "ArrowFunctionExpression",
+                        "start": 192,
+                        "end": 267,
+                        "id": null,
+                        "expression": false,
+                        "generator": false,
+                        "async": false,
+                        "params": [
+                          {
+                            "type": "ObjectPattern",
+                            "start": 193,
+                            "end": 200,
+                            "properties": [
+                              {
+                                "type": "Property",
+                                "start": 195,
+                                "end": 198,
+                                "method": false,
+                                "shorthand": true,
+                                "computed": false,
+                                "key": {
+                                  "type": "Identifier",
+                                  "start": 195,
+                                  "end": 198,
+                                  "name": "get"
+                                },
+                                "value": {
+                                  "type": "Identifier",
+                                  "start": 195,
+                                  "end": 198,
+                                  "name": "get"
+                                },
+                                "kind": "init"
+                              }
+                            ]
+                          }
+                        ],
+                        "body": {
+                          "type": "BlockStatement",
+                          "start": 205,
+                          "end": 267,
+                          "body": [
+                            {
+                              "type": "VariableDeclaration",
+                              "start": 211,
+                              "end": 241,
+                              "declarations": [
+                                {
+                                  "type": "VariableDeclarator",
+                                  "start": 217,
+                                  "end": 240,
+                                  "id": {
+                                    "type": "Identifier",
+                                    "start": 217,
+                                    "end": 222,
+                                    "name": "count"
+                                  },
+                                  "init": {
+                                    "type": "CallExpression",
+                                    "start": 225,
+                                    "end": 240,
+                                    "callee": {
+                                      "type": "Identifier",
+                                      "start": 225,
+                                      "end": 228,
+                                      "name": "get"
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Identifier",
+                                        "start": 229,
+                                        "end": 239,
+                                        "name": "countState"
+                                      }
+                                    ],
+                                    "optional": false
+                                  }
+                                }
+                              ],
+                              "kind": "const"
+                            },
+                            {
+                              "type": "ReturnStatement",
+                              "start": 246,
+                              "end": 263,
+                              "argument": {
+                                "type": "BinaryExpression",
+                                "start": 253,
+                                "end": 262,
+                                "left": {
+                                  "type": "Identifier",
+                                  "start": 253,
+                                  "end": 258,
+                                  "name": "count"
+                                },
+                                "operator": "*",
+                                "right": {
+                                  "type": "Literal",
+                                  "start": 261,
+                                  "end": 262,
+                                  "value": 2,
+                                  "raw": "2"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "kind": "init"
+                    }
+                  ]
+                }
+              ],
+              "optional": false
+            }
+          }
+        ],
+        "kind": "const"
+      },
+      "specifiers": [],
+      "source": null,
+      "attributes": []
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 122,
+      "end": 272,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 128,
+          "end": 271,
+          "id": {
+            "type": "Identifier",
+            "start": 128,
+            "end": 144,
+            "name": "doubleCountState"
+          },
+          "init": {
+            "type": "CallExpression",
+            "start": 147,
+            "end": 271,
+            "callee": {
+              "type": "Identifier",
+              "start": 147,
+              "end": 155,
+              "name": "selector"
+            },
+            "arguments": [
+              {
+                "type": "ObjectExpression",
+                "start": 156,
+                "end": 270,
+                "properties": [
+                  {
+                    "type": "Property",
+                    "start": 160,
+                    "end": 183,
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 160,
+                      "end": 163,
+                      "name": "key"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "start": 165,
+                      "end": 183,
+                      "value": "doubleCountState",
+                      "raw": "'doubleCountState'"
+                    },
+                    "kind": "init"
+                  },
+                  {
+                    "type": "Property",
+                    "start": 187,
+                    "end": 267,
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 187,
+                      "end": 190,
+                      "name": "get"
+                    },
+                    "value": {
+                      "type": "ArrowFunctionExpression",
+                      "start": 192,
+                      "end": 267,
+                      "id": null,
+                      "expression": false,
+                      "generator": false,
+                      "async": false,
+                      "params": [
+                        {
+                          "type": "ObjectPattern",
+                          "start": 193,
+                          "end": 200,
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "start": 195,
+                              "end": 198,
+                              "method": false,
+                              "shorthand": true,
+                              "computed": false,
+                              "key": {
+                                "type": "Identifier",
+                                "start": 195,
+                                "end": 198,
+                                "name": "get"
+                              },
+                              "value": {
+                                "type": "Identifier",
+                                "start": 195,
+                                "end": 198,
+                                "name": "get"
+                              },
+                              "kind": "init"
+                            }
+                          ]
+                        }
+                      ],
+                      "body": {
+                        "type": "BlockStatement",
+                        "start": 205,
+                        "end": 267,
+                        "body": [
+                          {
+                            "type": "VariableDeclaration",
+                            "start": 211,
+                            "end": 241,
+                            "declarations": [
+                              {
+                                "type": "VariableDeclarator",
+                                "start": 217,
+                                "end": 240,
+                                "id": {
+                                  "type": "Identifier",
+                                  "start": 217,
+                                  "end": 222,
+                                  "name": "count"
+                                },
+                                "init": {
+                                  "type": "CallExpression",
+                                  "start": 225,
+                                  "end": 240,
+                                  "callee": {
+                                    "type": "Identifier",
+                                    "start": 225,
+                                    "end": 228,
+                                    "name": "get"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Identifier",
+                                      "start": 229,
+                                      "end": 239,
+                                      "name": "countState"
+                                    }
+                                  ],
+                                  "optional": false
+                                }
+                              }
+                            ],
+                            "kind": "const"
+                          },
+                          {
+                            "type": "ReturnStatement",
+                            "start": 246,
+                            "end": 263,
+                            "argument": {
+                              "type": "BinaryExpression",
+                              "start": 253,
+                              "end": 262,
+                              "left": {
+                                "type": "Identifier",
+                                "start": 253,
+                                "end": 258,
+                                "name": "count"
+                              },
+                              "operator": "*",
+                              "right": {
+                                "type": "Literal",
+                                "start": 261,
+                                "end": 262,
+                                "value": 2,
+                                "raw": "2"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "kind": "init"
+                  }
+                ]
+              }
+            ],
+            "optional": false
+          }
+        }
+      ],
+      "kind": "const"
+    },
+    {
+      "type": "VariableDeclarator",
+      "start": 128,
+      "end": 271,
+      "id": {
+        "type": "Identifier",
+        "start": 128,
+        "end": 144,
+        "name": "doubleCountState"
+      },
+      "init": {
+        "type": "CallExpression",
+        "start": 147,
+        "end": 271,
+        "callee": {
+          "type": "Identifier",
+          "start": 147,
+          "end": 155,
+          "name": "selector"
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "start": 156,
+            "end": 270,
+            "properties": [
+              {
+                "type": "Property",
+                "start": 160,
+                "end": 183,
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 160,
+                  "end": 163,
+                  "name": "key"
+                },
+                "value": {
+                  "type": "Literal",
+                  "start": 165,
+                  "end": 183,
+                  "value": "doubleCountState",
+                  "raw": "'doubleCountState'"
+                },
+                "kind": "init"
+              },
+              {
+                "type": "Property",
+                "start": 187,
+                "end": 267,
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 187,
+                  "end": 190,
+                  "name": "get"
+                },
+                "value": {
+                  "type": "ArrowFunctionExpression",
+                  "start": 192,
+                  "end": 267,
+                  "id": null,
+                  "expression": false,
+                  "generator": false,
+                  "async": false,
+                  "params": [
+                    {
+                      "type": "ObjectPattern",
+                      "start": 193,
+                      "end": 200,
+                      "properties": [
+                        {
+                          "type": "Property",
+                          "start": 195,
+                          "end": 198,
+                          "method": false,
+                          "shorthand": true,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 195,
+                            "end": 198,
+                            "name": "get"
+                          },
+                          "value": {
+                            "type": "Identifier",
+                            "start": 195,
+                            "end": 198,
+                            "name": "get"
+                          },
+                          "kind": "init"
+                        }
+                      ]
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "start": 205,
+                    "end": 267,
+                    "body": [
+                      {
+                        "type": "VariableDeclaration",
+                        "start": 211,
+                        "end": 241,
+                        "declarations": [
+                          {
+                            "type": "VariableDeclarator",
+                            "start": 217,
+                            "end": 240,
+                            "id": {
+                              "type": "Identifier",
+                              "start": 217,
+                              "end": 222,
+                              "name": "count"
+                            },
+                            "init": {
+                              "type": "CallExpression",
+                              "start": 225,
+                              "end": 240,
+                              "callee": {
+                                "type": "Identifier",
+                                "start": 225,
+                                "end": 228,
+                                "name": "get"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Identifier",
+                                  "start": 229,
+                                  "end": 239,
+                                  "name": "countState"
+                                }
+                              ],
+                              "optional": false
+                            }
+                          }
+                        ],
+                        "kind": "const"
+                      },
+                      {
+                        "type": "ReturnStatement",
+                        "start": 246,
+                        "end": 263,
+                        "argument": {
+                          "type": "BinaryExpression",
+                          "start": 253,
+                          "end": 262,
+                          "left": {
+                            "type": "Identifier",
+                            "start": 253,
+                            "end": 258,
+                            "name": "count"
+                          },
+                          "operator": "*",
+                          "right": {
+                            "type": "Literal",
+                            "start": 261,
+                            "end": 262,
+                            "value": 2,
+                            "raw": "2"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "kind": "init"
+              }
+            ]
+          }
+        ],
+        "optional": false
+      }
+    },
+    {
+      "type": "Identifier",
+      "start": 128,
+      "end": 144,
+      "name": "doubleCountState"
+    },
+    {
+      "type": "CallExpression",
+      "start": 147,
+      "end": 271,
+      "callee": {
+        "type": "Identifier",
+        "start": 147,
+        "end": 155,
+        "name": "selector"
+      },
+      "arguments": [
+        {
+          "type": "ObjectExpression",
+          "start": 156,
+          "end": 270,
+          "properties": [
+            {
+              "type": "Property",
+              "start": 160,
+              "end": 183,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 160,
+                "end": 163,
+                "name": "key"
+              },
+              "value": {
+                "type": "Literal",
+                "start": 165,
+                "end": 183,
+                "value": "doubleCountState",
+                "raw": "'doubleCountState'"
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 187,
+              "end": 267,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 187,
+                "end": 190,
+                "name": "get"
+              },
+              "value": {
+                "type": "ArrowFunctionExpression",
+                "start": 192,
+                "end": 267,
+                "id": null,
+                "expression": false,
+                "generator": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "ObjectPattern",
+                    "start": 193,
+                    "end": 200,
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "start": 195,
+                        "end": 198,
+                        "method": false,
+                        "shorthand": true,
+                        "computed": false,
+                        "key": {
+                          "type": "Identifier",
+                          "start": 195,
+                          "end": 198,
+                          "name": "get"
+                        },
+                        "value": {
+                          "type": "Identifier",
+                          "start": 195,
+                          "end": 198,
+                          "name": "get"
+                        },
+                        "kind": "init"
+                      }
+                    ]
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 205,
+                  "end": 267,
+                  "body": [
+                    {
+                      "type": "VariableDeclaration",
+                      "start": 211,
+                      "end": 241,
+                      "declarations": [
+                        {
+                          "type": "VariableDeclarator",
+                          "start": 217,
+                          "end": 240,
+                          "id": {
+                            "type": "Identifier",
+                            "start": 217,
+                            "end": 222,
+                            "name": "count"
+                          },
+                          "init": {
+                            "type": "CallExpression",
+                            "start": 225,
+                            "end": 240,
+                            "callee": {
+                              "type": "Identifier",
+                              "start": 225,
+                              "end": 228,
+                              "name": "get"
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "start": 229,
+                                "end": 239,
+                                "name": "countState"
+                              }
+                            ],
+                            "optional": false
+                          }
+                        }
+                      ],
+                      "kind": "const"
+                    },
+                    {
+                      "type": "ReturnStatement",
+                      "start": 246,
+                      "end": 263,
+                      "argument": {
+                        "type": "BinaryExpression",
+                        "start": 253,
+                        "end": 262,
+                        "left": {
+                          "type": "Identifier",
+                          "start": 253,
+                          "end": 258,
+                          "name": "count"
+                        },
+                        "operator": "*",
+                        "right": {
+                          "type": "Literal",
+                          "start": 261,
+                          "end": 262,
+                          "value": 2,
+                          "raw": "2"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "kind": "init"
+            }
+          ]
+        }
+      ],
+      "optional": false
+    },
+    {
+      "type": "Identifier",
+      "start": 147,
+      "end": 155,
+      "name": "selector"
+    },
+    {
+      "type": "ObjectExpression",
+      "start": 156,
+      "end": 270,
+      "properties": [
+        {
+          "type": "Property",
+          "start": 160,
+          "end": 183,
+          "method": false,
+          "shorthand": false,
+          "computed": false,
+          "key": {
+            "type": "Identifier",
+            "start": 160,
+            "end": 163,
+            "name": "key"
+          },
+          "value": {
+            "type": "Literal",
+            "start": 165,
+            "end": 183,
+            "value": "doubleCountState",
+            "raw": "'doubleCountState'"
+          },
+          "kind": "init"
+        },
+        {
+          "type": "Property",
+          "start": 187,
+          "end": 267,
+          "method": false,
+          "shorthand": false,
+          "computed": false,
+          "key": {
+            "type": "Identifier",
+            "start": 187,
+            "end": 190,
+            "name": "get"
+          },
+          "value": {
+            "type": "ArrowFunctionExpression",
+            "start": 192,
+            "end": 267,
+            "id": null,
+            "expression": false,
+            "generator": false,
+            "async": false,
+            "params": [
+              {
+                "type": "ObjectPattern",
+                "start": 193,
+                "end": 200,
+                "properties": [
+                  {
+                    "type": "Property",
+                    "start": 195,
+                    "end": 198,
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 195,
+                      "end": 198,
+                      "name": "get"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 195,
+                      "end": 198,
+                      "name": "get"
+                    },
+                    "kind": "init"
+                  }
+                ]
+              }
+            ],
+            "body": {
+              "type": "BlockStatement",
+              "start": 205,
+              "end": 267,
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "start": 211,
+                  "end": 241,
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "start": 217,
+                      "end": 240,
+                      "id": {
+                        "type": "Identifier",
+                        "start": 217,
+                        "end": 222,
+                        "name": "count"
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "start": 225,
+                        "end": 240,
+                        "callee": {
+                          "type": "Identifier",
+                          "start": 225,
+                          "end": 228,
+                          "name": "get"
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "start": 229,
+                            "end": 239,
+                            "name": "countState"
+                          }
+                        ],
+                        "optional": false
+                      }
+                    }
+                  ],
+                  "kind": "const"
+                },
+                {
+                  "type": "ReturnStatement",
+                  "start": 246,
+                  "end": 263,
+                  "argument": {
+                    "type": "BinaryExpression",
+                    "start": 253,
+                    "end": 262,
+                    "left": {
+                      "type": "Identifier",
+                      "start": 253,
+                      "end": 258,
+                      "name": "count"
+                    },
+                    "operator": "*",
+                    "right": {
+                      "type": "Literal",
+                      "start": 261,
+                      "end": 262,
+                      "value": 2,
+                      "raw": "2"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "kind": "init"
+        }
+      ]
+    },
+    {
+      "type": "Property",
+      "start": 160,
+      "end": 183,
+      "method": false,
+      "shorthand": false,
+      "computed": false,
+      "key": {
+        "type": "Identifier",
+        "start": 160,
+        "end": 163,
+        "name": "key"
+      },
+      "value": {
+        "type": "Literal",
+        "start": 165,
+        "end": 183,
+        "value": "doubleCountState",
+        "raw": "'doubleCountState'"
+      },
+      "kind": "init"
+    },
+    {
+      "type": "Identifier",
+      "start": 160,
+      "end": 163,
+      "name": "key"
+    },
+    {
+      "type": "Literal",
+      "start": 165,
+      "end": 183,
+      "value": "doubleCountState",
+      "raw": "'doubleCountState'"
+    },
+    {
+      "type": "Property",
+      "start": 187,
+      "end": 267,
+      "method": false,
+      "shorthand": false,
+      "computed": false,
+      "key": {
+        "type": "Identifier",
+        "start": 187,
+        "end": 190,
+        "name": "get"
+      },
+      "value": {
+        "type": "ArrowFunctionExpression",
+        "start": 192,
+        "end": 267,
+        "id": null,
+        "expression": false,
+        "generator": false,
+        "async": false,
+        "params": [
+          {
+            "type": "ObjectPattern",
+            "start": 193,
+            "end": 200,
+            "properties": [
+              {
+                "type": "Property",
+                "start": 195,
+                "end": 198,
+                "method": false,
+                "shorthand": true,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 195,
+                  "end": 198,
+                  "name": "get"
+                },
+                "value": {
+                  "type": "Identifier",
+                  "start": 195,
+                  "end": 198,
+                  "name": "get"
+                },
+                "kind": "init"
+              }
+            ]
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "start": 205,
+          "end": 267,
+          "body": [
+            {
+              "type": "VariableDeclaration",
+              "start": 211,
+              "end": 241,
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "start": 217,
+                  "end": 240,
+                  "id": {
+                    "type": "Identifier",
+                    "start": 217,
+                    "end": 222,
+                    "name": "count"
+                  },
+                  "init": {
+                    "type": "CallExpression",
+                    "start": 225,
+                    "end": 240,
+                    "callee": {
+                      "type": "Identifier",
+                      "start": 225,
+                      "end": 228,
+                      "name": "get"
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "start": 229,
+                        "end": 239,
+                        "name": "countState"
+                      }
+                    ],
+                    "optional": false
+                  }
+                }
+              ],
+              "kind": "const"
+            },
+            {
+              "type": "ReturnStatement",
+              "start": 246,
+              "end": 263,
+              "argument": {
+                "type": "BinaryExpression",
+                "start": 253,
+                "end": 262,
+                "left": {
+                  "type": "Identifier",
+                  "start": 253,
+                  "end": 258,
+                  "name": "count"
+                },
+                "operator": "*",
+                "right": {
+                  "type": "Literal",
+                  "start": 261,
+                  "end": 262,
+                  "value": 2,
+                  "raw": "2"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "kind": "init"
+    },
+    {
+      "type": "Identifier",
+      "start": 187,
+      "end": 190,
+      "name": "get"
+    },
+    {
+      "type": "ArrowFunctionExpression",
+      "start": 192,
+      "end": 267,
+      "id": null,
+      "expression": false,
+      "generator": false,
+      "async": false,
+      "params": [
+        {
+          "type": "ObjectPattern",
+          "start": 193,
+          "end": 200,
+          "properties": [
+            {
+              "type": "Property",
+              "start": 195,
+              "end": 198,
+              "method": false,
+              "shorthand": true,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 195,
+                "end": 198,
+                "name": "get"
+              },
+              "value": {
+                "type": "Identifier",
+                "start": 195,
+                "end": 198,
+                "name": "get"
+              },
+              "kind": "init"
+            }
+          ]
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "start": 205,
+        "end": 267,
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "start": 211,
+            "end": 241,
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "start": 217,
+                "end": 240,
+                "id": {
+                  "type": "Identifier",
+                  "start": 217,
+                  "end": 222,
+                  "name": "count"
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "start": 225,
+                  "end": 240,
+                  "callee": {
+                    "type": "Identifier",
+                    "start": 225,
+                    "end": 228,
+                    "name": "get"
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "start": 229,
+                      "end": 239,
+                      "name": "countState"
+                    }
+                  ],
+                  "optional": false
+                }
+              }
+            ],
+            "kind": "const"
+          },
+          {
+            "type": "ReturnStatement",
+            "start": 246,
+            "end": 263,
+            "argument": {
+              "type": "BinaryExpression",
+              "start": 253,
+              "end": 262,
+              "left": {
+                "type": "Identifier",
+                "start": 253,
+                "end": 258,
+                "name": "count"
+              },
+              "operator": "*",
+              "right": {
+                "type": "Literal",
+                "start": 261,
+                "end": 262,
+                "value": 2,
+                "raw": "2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "ObjectPattern",
+      "start": 193,
+      "end": 200,
+      "properties": [
+        {
+          "type": "Property",
+          "start": 195,
+          "end": 198,
+          "method": false,
+          "shorthand": true,
+          "computed": false,
+          "key": {
+            "type": "Identifier",
+            "start": 195,
+            "end": 198,
+            "name": "get"
+          },
+          "value": {
+            "type": "Identifier",
+            "start": 195,
+            "end": 198,
+            "name": "get"
+          },
+          "kind": "init"
+        }
+      ]
+    },
+    {
+      "type": "Property",
+      "start": 195,
+      "end": 198,
+      "method": false,
+      "shorthand": true,
+      "computed": false,
+      "key": {
+        "type": "Identifier",
+        "start": 195,
+        "end": 198,
+        "name": "get"
+      },
+      "value": {
+        "type": "Identifier",
+        "start": 195,
+        "end": 198,
+        "name": "get"
+      },
+      "kind": "init"
+    },
+    {
+      "type": "Identifier",
+      "start": 195,
+      "end": 198,
+      "name": "get"
+    },
+    {
+      "type": "Identifier",
+      "start": 195,
+      "end": 198,
+      "name": "get"
+    },
+    {
+      "type": "BlockStatement",
+      "start": 205,
+      "end": 267,
+      "body": [
+        {
+          "type": "VariableDeclaration",
+          "start": 211,
+          "end": 241,
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 217,
+              "end": 240,
+              "id": {
+                "type": "Identifier",
+                "start": 217,
+                "end": 222,
+                "name": "count"
+              },
+              "init": {
+                "type": "CallExpression",
+                "start": 225,
+                "end": 240,
+                "callee": {
+                  "type": "Identifier",
+                  "start": 225,
+                  "end": 228,
+                  "name": "get"
+                },
+                "arguments": [
+                  {
+                    "type": "Identifier",
+                    "start": 229,
+                    "end": 239,
+                    "name": "countState"
+                  }
+                ],
+                "optional": false
+              }
+            }
+          ],
+          "kind": "const"
+        },
+        {
+          "type": "ReturnStatement",
+          "start": 246,
+          "end": 263,
+          "argument": {
+            "type": "BinaryExpression",
+            "start": 253,
+            "end": 262,
+            "left": {
+              "type": "Identifier",
+              "start": 253,
+              "end": 258,
+              "name": "count"
+            },
+            "operator": "*",
+            "right": {
+              "type": "Literal",
+              "start": 261,
+              "end": 262,
+              "value": 2,
+              "raw": "2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "VariableDeclaration",
+      "start": 211,
+      "end": 241,
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "start": 217,
+          "end": 240,
+          "id": {
+            "type": "Identifier",
+            "start": 217,
+            "end": 222,
+            "name": "count"
+          },
+          "init": {
+            "type": "CallExpression",
+            "start": 225,
+            "end": 240,
+            "callee": {
+              "type": "Identifier",
+              "start": 225,
+              "end": 228,
+              "name": "get"
+            },
+            "arguments": [
+              {
+                "type": "Identifier",
+                "start": 229,
+                "end": 239,
+                "name": "countState"
+              }
+            ],
+            "optional": false
+          }
+        }
+      ],
+      "kind": "const"
+    },
+    {
+      "type": "VariableDeclarator",
+      "start": 217,
+      "end": 240,
+      "id": {
+        "type": "Identifier",
+        "start": 217,
+        "end": 222,
+        "name": "count"
+      },
+      "init": {
+        "type": "CallExpression",
+        "start": 225,
+        "end": 240,
+        "callee": {
+          "type": "Identifier",
+          "start": 225,
+          "end": 228,
+          "name": "get"
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "start": 229,
+            "end": 239,
+            "name": "countState"
+          }
+        ],
+        "optional": false
+      }
+    },
+    {
+      "type": "Identifier",
+      "start": 217,
+      "end": 222,
+      "name": "count"
+    },
+    {
+      "type": "CallExpression",
+      "start": 225,
+      "end": 240,
+      "callee": {
+        "type": "Identifier",
+        "start": 225,
+        "end": 228,
+        "name": "get"
+      },
+      "arguments": [
+        {
+          "type": "Identifier",
+          "start": 229,
+          "end": 239,
+          "name": "countState"
+        }
+      ],
+      "optional": false
+    },
+    {
+      "type": "Identifier",
+      "start": 225,
+      "end": 228,
+      "name": "get"
+    },
+    {
+      "type": "Identifier",
+      "start": 229,
+      "end": 239,
+      "name": "countState"
+    },
+    {
+      "type": "ReturnStatement",
+      "start": 246,
+      "end": 263,
+      "argument": {
+        "type": "BinaryExpression",
+        "start": 253,
+        "end": 262,
+        "left": {
+          "type": "Identifier",
+          "start": 253,
+          "end": 258,
+          "name": "count"
+        },
+        "operator": "*",
+        "right": {
+          "type": "Literal",
+          "start": 261,
+          "end": 262,
+          "value": 2,
+          "raw": "2"
+        }
+      }
+    },
+    {
+      "type": "BinaryExpression",
+      "start": 253,
+      "end": 262,
+      "left": {
+        "type": "Identifier",
+        "start": 253,
+        "end": 258,
+        "name": "count"
+      },
+      "operator": "*",
+      "right": {
+        "type": "Literal",
+        "start": 261,
+        "end": 262,
+        "value": 2,
+        "raw": "2"
+      }
+    },
+    {
+      "type": "Identifier",
+      "start": 253,
+      "end": 258,
+      "name": "count"
+    },
+    {
+      "type": "Literal",
+      "start": 261,
+      "end": 262,
+      "value": 2,
+      "raw": "2"
+    }
+  ]
+}
+`;
