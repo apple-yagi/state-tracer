@@ -1,0 +1,16 @@
+exports[`generateDot > should generate a dot representation of the dependency graph 1`] = `
+digraph {
+  rankdir=LR;
+  node [shape=box, style=rounded, fontname="Arial"];
+    "countState";
+    "doubleCountState";
+    "quadrupleCountState";
+    "countStateFamily";
+    "doubleCountStateFamily";
+    "quadrupleCountStateFamily";
+    countState -> doubleCountState;
+  doubleCountState -> quadrupleCountState;
+  countStateFamily -> doubleCountStateFamily;
+  doubleCountStateFamily -> quadrupleCountStateFamily;
+z}
+`;

@@ -8,7 +8,7 @@ type ExtractResult = {
 	arguments: Argument[];
 };
 
-type Deps = {
+export type Deps = {
 	name: string;
 	deps: string[];
 };

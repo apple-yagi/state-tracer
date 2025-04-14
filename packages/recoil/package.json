@@ -7,16 +7,20 @@
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
 		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
 	},
-	"keywords": ["recoil"],
+	"keywords": [
+		"recoil"
+	],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
 	"peerDependencies": {
-		"oxc-walker": "^0.2.4",
-		"oxc-parser": "^0.63.0"
+		"oxc-parser": "^0.63.0",
+		"oxc-walker": "^0.2.4"
 	},
 	"devDependencies": {
+		"@hpcc-js/wasm": "^2.22.4",
 		"@mizdra/inline-fixture-files": "^2.1.1",
-		"dedent": "^1.5.3"
+		"dedent": "^1.5.3",
+		"recoil": "^0.7.7"
 	}
 }
