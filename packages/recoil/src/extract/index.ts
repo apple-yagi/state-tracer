@@ -18,9 +18,13 @@ export function extractAtomsAndSelectorsWithDeps(filename: string) {
 
 	let localAtomName = "";
 	let localSelectorName = "";
+	let localAtomFamilyName = "";
+	let localSelectorFamilyName = "";
 
 	const atoms = new Set<ExtractResult>();
 	const selectors = new Set<ExtractResult>();
+	const atomFamilies = new Set<ExtractResult>();
+	const selectorFamilies = new Set<ExtractResult>();
 	// for debug
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const nodeList: any[] = [];
@@ -38,6 +42,10 @@ export function extractAtomsAndSelectorsWithDeps(filename: string) {
 					localAtomName = node.local.name;
 				} else if (node.imported.name === "selector") {
 					localSelectorName = node.local.name;
+				} else if (node.imported.name === "atomFamily") {
+					localAtomFamilyName = node.local.name;
+				} else if (node.imported.name === "selectorFamily") {
+					localSelectorFamilyName = node.local.name;
 				}
 			}
 		}
@@ -46,19 +54,31 @@ export function extractAtomsAndSelectorsWithDeps(filename: string) {
 			if (node.callee.type === "Identifier") {
 				if (
 					(node.callee.name === localAtomName ||
-						node.callee.name === localSelectorName) &&
+						node.callee.name === localSelectorName ||
+						node.callee.name === localAtomFamilyName ||
+						node.callee.name === localSelectorFamilyName) &&
 					// ref https://github.com/oxc-project/oxc-walker/pull/91
 					// @ts-ignore
 					parent?.type === "VariableDeclarator"
 				) {
 					if (node.callee.name === localAtomName) {
-						// ref https://github.com/oxc-project/oxc-walker/pull/91
 						// @ts-ignore
 						atoms.add({ name: parent?.id.name, arguments: node.arguments });
 					} else if (node.callee.name === localSelectorName) {
-						// ref https://github.com/oxc-project/oxc-walker/pull/91
 						// @ts-ignore
 						selectors.add({ name: parent?.id.name, arguments: node.arguments });
+					} else if (node.callee.name === localAtomFamilyName) {
+						atomFamilies.add({
+							// @ts-ignore
+							name: parent?.id.name,
+							arguments: node.arguments,
+						});
+					} else if (node.callee.name === localSelectorFamilyName) {
+						selectorFamilies.add({
+							// @ts-ignore
+							name: parent?.id.name,
+							arguments: node.arguments,
+						});
 					}
 				}
 			}
@@ -69,7 +89,18 @@ export function extractAtomsAndSelectorsWithDeps(filename: string) {
 	const selectorNameList = Array.from(selectors).map(
 		(selector) => selector.name,
 	);
-	const allNames = [...atomNameList, ...selectorNameList];
+	const atomFamilyNameList = Array.from(atomFamilies).map(
+		(atomFamily) => atomFamily.name,
+	);
+	const selectorFamilyNameList = Array.from(selectorFamilies).map(
+		(selectorFamily) => selectorFamily.name,
+	);
+	const allNames = [
+		...atomNameList,
+		...selectorNameList,
+		...atomFamilyNameList,
+		...selectorFamilyNameList,
+	];
 
 	const atomDeps = Array.from(atoms).map((atom) => {
 		const deps: Deps = { name: atom.name, deps: [] };
@@ -101,10 +132,44 @@ export function extractAtomsAndSelectorsWithDeps(filename: string) {
 		return deps;
 	});
 
+	const atomFamilyDeps = Array.from(atomFamilies).map((atomFamily) => {
+		const deps: Deps = { name: atomFamily.name, deps: [] };
+		for (const arg of atomFamily.arguments) {
+			walk(arg, {
+				enter(node) {
+					if (node.type === "Identifier" && allNames.includes(node.name)) {
+						deps.deps.push(node.name);
+					}
+				},
+			});
+		}
+		return deps;
+	});
+
+	const selectorFamilyDeps = Array.from(selectorFamilies).map(
+		(selectorFamily) => {
+			const deps: Deps = { name: selectorFamily.name, deps: [] };
+			for (const arg of selectorFamily.arguments) {
+				walk(arg, {
+					enter(node) {
+						if (node.type === "Identifier" && allNames.includes(node.name)) {
+							deps.deps.push(node.name);
+						}
+					},
+				});
+			}
+			return deps;
+		},
+	);
+
 	return {
 		atoms: Array.from(atoms),
 		selectors: Array.from(selectors),
+		atomFamilies: Array.from(atomFamilies),
+		selectorFamilies: Array.from(selectorFamilies),
 		atomDeps,
 		selectorDeps,
+		atomFamilyDeps,
+		selectorFamilyDeps,
 	};
 }

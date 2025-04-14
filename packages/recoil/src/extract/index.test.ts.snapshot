@@ -6,26 +6,26 @@ exports[`extract > should extract atoms and selectors 1`] = `
       "arguments": [
         {
           "type": "ObjectExpression",
-          "start": 79,
-          "end": 135,
+          "start": 107,
+          "end": 163,
           "properties": [
             {
               "type": "Property",
-              "start": 89,
-              "end": 106,
+              "start": 117,
+              "end": 134,
               "method": false,
               "shorthand": false,
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 89,
-                "end": 92,
+                "start": 117,
+                "end": 120,
                 "name": "key"
               },
               "value": {
                 "type": "Literal",
-                "start": 94,
-                "end": 106,
+                "start": 122,
+                "end": 134,
                 "value": "countState",
                 "raw": "'countState'"
               },
@@ -33,21 +33,21 @@ exports[`extract > should extract atoms and selectors 1`] = `
             },
             {
               "type": "Property",
-              "start": 116,
-              "end": 126,
+              "start": 144,
+              "end": 154,
               "method": false,
               "shorthand": false,
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 116,
-                "end": 123,
+                "start": 144,
+                "end": 151,
                 "name": "default"
               },
               "value": {
                 "type": "Literal",
-                "start": 125,
-                "end": 126,
+                "start": 153,
+                "end": 154,
                 "value": 0,
                 "raw": "0"
               },
@@ -62,26 +62,26 @@ exports[`extract > should extract atoms and selectors 1`] = `
       "arguments": [
         {
           "type": "ObjectExpression",
-          "start": 380,
-          "end": 557,
+          "start": 408,
+          "end": 585,
           "properties": [
             {
               "type": "Property",
-              "start": 383,
-              "end": 410,
+              "start": 411,
+              "end": 438,
               "method": false,
               "shorthand": false,
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 383,
-                "end": 386,
+                "start": 411,
+                "end": 414,
                 "name": "key"
               },
               "value": {
                 "type": "Literal",
-                "start": 388,
-                "end": 410,
+                "start": 416,
+                "end": 438,
                 "value": "doubleCountAtomState",
                 "raw": "'doubleCountAtomState'"
               },
@@ -89,50 +89,50 @@ exports[`extract > should extract atoms and selectors 1`] = `
             },
             {
               "type": "Property",
-              "start": 413,
-              "end": 554,
+              "start": 441,
+              "end": 582,
               "method": false,
               "shorthand": false,
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 413,
-                "end": 420,
+                "start": 441,
+                "end": 448,
                 "name": "default"
               },
               "value": {
                 "type": "CallExpression",
-                "start": 422,
-                "end": 554,
+                "start": 450,
+                "end": 582,
                 "callee": {
                   "type": "Identifier",
-                  "start": 422,
-                  "end": 430,
+                  "start": 450,
+                  "end": 458,
                   "name": "selector"
                 },
                 "arguments": [
                   {
                     "type": "ObjectExpression",
-                    "start": 431,
-                    "end": 553,
+                    "start": 459,
+                    "end": 581,
                     "properties": [
                       {
                         "type": "Property",
-                        "start": 435,
-                        "end": 461,
+                        "start": 463,
+                        "end": 489,
                         "method": false,
                         "shorthand": false,
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 435,
-                          "end": 438,
+                          "start": 463,
+                          "end": 466,
                           "name": "key"
                         },
                         "value": {
                           "type": "Literal",
-                          "start": 440,
-                          "end": 461,
+                          "start": 468,
+                          "end": 489,
                           "value": "quadrupleCountState",
                           "raw": "'quadrupleCountState'"
                         },
@@ -140,21 +140,21 @@ exports[`extract > should extract atoms and selectors 1`] = `
                       },
                       {
                         "type": "Property",
-                        "start": 465,
-                        "end": 549,
+                        "start": 493,
+                        "end": 577,
                         "method": false,
                         "shorthand": false,
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 465,
-                          "end": 468,
+                          "start": 493,
+                          "end": 496,
                           "name": "get"
                         },
                         "value": {
                           "type": "ArrowFunctionExpression",
-                          "start": 470,
-                          "end": 549,
+                          "start": 498,
+                          "end": 577,
                           "id": null,
                           "expression": false,
                           "generator": false,
@@ -162,26 +162,26 @@ exports[`extract > should extract atoms and selectors 1`] = `
                           "params": [
                             {
                               "type": "ObjectPattern",
-                              "start": 471,
-                              "end": 478,
+                              "start": 499,
+                              "end": 506,
                               "properties": [
                                 {
                                   "type": "Property",
-                                  "start": 473,
-                                  "end": 476,
+                                  "start": 501,
+                                  "end": 504,
                                   "method": false,
                                   "shorthand": true,
                                   "computed": false,
                                   "key": {
                                     "type": "Identifier",
-                                    "start": 473,
-                                    "end": 476,
+                                    "start": 501,
+                                    "end": 504,
                                     "name": "get"
                                   },
                                   "value": {
                                     "type": "Identifier",
-                                    "start": 473,
-                                    "end": 476,
+                                    "start": 501,
+                                    "end": 504,
                                     "name": "get"
                                   },
                                   "kind": "init"
@@ -191,39 +191,39 @@ exports[`extract > should extract atoms and selectors 1`] = `
                           ],
                           "body": {
                             "type": "BlockStatement",
-                            "start": 483,
-                            "end": 549,
+                            "start": 511,
+                            "end": 577,
                             "body": [
                               {
                                 "type": "VariableDeclaration",
-                                "start": 488,
-                                "end": 524,
+                                "start": 516,
+                                "end": 552,
                                 "declarations": [
                                   {
                                     "type": "VariableDeclarator",
-                                    "start": 494,
-                                    "end": 523,
+                                    "start": 522,
+                                    "end": 551,
                                     "id": {
                                       "type": "Identifier",
-                                      "start": 494,
-                                      "end": 499,
+                                      "start": 522,
+                                      "end": 527,
                                       "name": "count"
                                     },
                                     "init": {
                                       "type": "CallExpression",
-                                      "start": 502,
-                                      "end": 523,
+                                      "start": 530,
+                                      "end": 551,
                                       "callee": {
                                         "type": "Identifier",
-                                        "start": 502,
-                                        "end": 505,
+                                        "start": 530,
+                                        "end": 533,
                                         "name": "get"
                                       },
                                       "arguments": [
                                         {
                                           "type": "Identifier",
-                                          "start": 506,
-                                          "end": 522,
+                                          "start": 534,
+                                          "end": 550,
                                           "name": "doubleCountState"
                                         }
                                       ],
@@ -235,23 +235,23 @@ exports[`extract > should extract atoms and selectors 1`] = `
                               },
                               {
                                 "type": "ReturnStatement",
-                                "start": 528,
-                                "end": 545,
+                                "start": 556,
+                                "end": 573,
                                 "argument": {
                                   "type": "BinaryExpression",
-                                  "start": 535,
-                                  "end": 544,
+                                  "start": 563,
+                                  "end": 572,
                                   "left": {
                                     "type": "Identifier",
-                                    "start": 535,
-                                    "end": 540,
+                                    "start": 563,
+                                    "end": 568,
                                     "name": "count"
                                   },
                                   "operator": "*",
                                   "right": {
                                     "type": "Literal",
-                                    "start": 543,
-                                    "end": 544,
+                                    "start": 571,
+                                    "end": 572,
                                     "value": 2,
                                     "raw": "2"
                                   }
@@ -280,26 +280,26 @@ exports[`extract > should extract atoms and selectors 1`] = `
       "arguments": [
         {
           "type": "ObjectExpression",
-          "start": 186,
-          "end": 336,
+          "start": 214,
+          "end": 364,
           "properties": [
             {
               "type": "Property",
-              "start": 196,
-              "end": 219,
+              "start": 224,
+              "end": 247,
               "method": false,
               "shorthand": false,
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 196,
-                "end": 199,
+                "start": 224,
+                "end": 227,
                 "name": "key"
               },
               "value": {
                 "type": "Literal",
-                "start": 201,
-                "end": 219,
+                "start": 229,
+                "end": 247,
                 "value": "doubleCountState",
                 "raw": "'doubleCountState'"
               },
@@ -307,21 +307,21 @@ exports[`extract > should extract atoms and selectors 1`] = `
             },
             {
               "type": "Property",
-              "start": 229,
-              "end": 327,
+              "start": 257,
+              "end": 355,
               "method": false,
               "shorthand": false,
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 229,
-                "end": 232,
+                "start": 257,
+                "end": 260,
                 "name": "get"
               },
               "value": {
                 "type": "ArrowFunctionExpression",
-                "start": 234,
-                "end": 327,
+                "start": 262,
+                "end": 355,
                 "id": null,
                 "expression": false,
                 "generator": false,
@@ -329,26 +329,26 @@ exports[`extract > should extract atoms and selectors 1`] = `
                 "params": [
                   {
                     "type": "ObjectPattern",
-                    "start": 235,
-                    "end": 242,
+                    "start": 263,
+                    "end": 270,
                     "properties": [
                       {
                         "type": "Property",
-                        "start": 237,
-                        "end": 240,
+                        "start": 265,
+                        "end": 268,
                         "method": false,
                         "shorthand": true,
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 237,
-                          "end": 240,
+                          "start": 265,
+                          "end": 268,
                           "name": "get"
                         },
                         "value": {
                           "type": "Identifier",
-                          "start": 237,
-                          "end": 240,
+                          "start": 265,
+                          "end": 268,
                           "name": "get"
                         },
                         "kind": "init"
@@ -358,39 +358,39 @@ exports[`extract > should extract atoms and selectors 1`] = `
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 247,
-                  "end": 327,
+                  "start": 275,
+                  "end": 355,
                   "body": [
                     {
                       "type": "VariableDeclaration",
-                      "start": 259,
-                      "end": 289,
+                      "start": 287,
+                      "end": 317,
                       "declarations": [
                         {
                           "type": "VariableDeclarator",
-                          "start": 265,
-                          "end": 288,
+                          "start": 293,
+                          "end": 316,
                           "id": {
                             "type": "Identifier",
-                            "start": 265,
-                            "end": 270,
+                            "start": 293,
+                            "end": 298,
                             "name": "count"
                           },
                           "init": {
                             "type": "CallExpression",
-                            "start": 273,
-                            "end": 288,
+                            "start": 301,
+                            "end": 316,
                             "callee": {
                               "type": "Identifier",
-                              "start": 273,
-                              "end": 276,
+                              "start": 301,
+                              "end": 304,
                               "name": "get"
                             },
                             "arguments": [
                               {
                                 "type": "Identifier",
-                                "start": 277,
-                                "end": 287,
+                                "start": 305,
+                                "end": 315,
                                 "name": "countState"
                               }
                             ],
@@ -402,29 +402,541 @@ exports[`extract > should extract atoms and selectors 1`] = `
                     },
                     {
                       "type": "ReturnStatement",
-                      "start": 300,
-                      "end": 317,
+                      "start": 328,
+                      "end": 345,
                       "argument": {
                         "type": "BinaryExpression",
-                        "start": 307,
-                        "end": 316,
+                        "start": 335,
+                        "end": 344,
                         "left": {
                           "type": "Identifier",
-                          "start": 307,
-                          "end": 312,
+                          "start": 335,
+                          "end": 340,
                           "name": "count"
                         },
                         "operator": "*",
                         "right": {
                           "type": "Literal",
-                          "start": 315,
-                          "end": 316,
+                          "start": 343,
+                          "end": 344,
                           "value": 2,
                           "raw": "2"
                         }
                       }
                     }
                   ]
+                }
+              },
+              "kind": "init"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "atomFamilies": [
+    {
+      "name": "countStateFamily",
+      "arguments": [
+        {
+          "type": "ObjectExpression",
+          "start": 632,
+          "end": 689,
+          "properties": [
+            {
+              "type": "Property",
+              "start": 635,
+              "end": 658,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 635,
+                "end": 638,
+                "name": "key"
+              },
+              "value": {
+                "type": "Literal",
+                "start": 640,
+                "end": 658,
+                "value": "countStateFamily",
+                "raw": "'countStateFamily'"
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 661,
+              "end": 686,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 661,
+                "end": 668,
+                "name": "default"
+              },
+              "value": {
+                "type": "ArrowFunctionExpression",
+                "start": 670,
+                "end": 686,
+                "id": null,
+                "expression": true,
+                "generator": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 671,
+                    "end": 676,
+                    "name": "param"
+                  }
+                ],
+                "body": {
+                  "type": "Identifier",
+                  "start": 681,
+                  "end": 686,
+                  "name": "param"
+                }
+              },
+              "kind": "init"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "quadrupleCountStateFamily",
+      "arguments": [
+        {
+          "type": "ObjectExpression",
+          "start": 939,
+          "end": 1157,
+          "properties": [
+            {
+              "type": "Property",
+              "start": 942,
+              "end": 974,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 942,
+                "end": 945,
+                "name": "key"
+              },
+              "value": {
+                "type": "Literal",
+                "start": 947,
+                "end": 974,
+                "value": "quadrupleCountStateFamily",
+                "raw": "'quadrupleCountStateFamily'"
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 977,
+              "end": 1154,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 977,
+                "end": 984,
+                "name": "default"
+              },
+              "value": {
+                "type": "CallExpression",
+                "start": 986,
+                "end": 1154,
+                "callee": {
+                  "type": "Identifier",
+                  "start": 986,
+                  "end": 1000,
+                  "name": "selectorFamily"
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "start": 1001,
+                    "end": 1153,
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "start": 1005,
+                        "end": 1037,
+                        "method": false,
+                        "shorthand": false,
+                        "computed": false,
+                        "key": {
+                          "type": "Identifier",
+                          "start": 1005,
+                          "end": 1008,
+                          "name": "key"
+                        },
+                        "value": {
+                          "type": "Literal",
+                          "start": 1010,
+                          "end": 1037,
+                          "value": "quadrupleCountStateFamily",
+                          "raw": "'quadrupleCountStateFamily'"
+                        },
+                        "kind": "init"
+                      },
+                      {
+                        "type": "Property",
+                        "start": 1041,
+                        "end": 1149,
+                        "method": false,
+                        "shorthand": false,
+                        "computed": false,
+                        "key": {
+                          "type": "Identifier",
+                          "start": 1041,
+                          "end": 1044,
+                          "name": "get"
+                        },
+                        "value": {
+                          "type": "ArrowFunctionExpression",
+                          "start": 1046,
+                          "end": 1149,
+                          "id": null,
+                          "expression": true,
+                          "generator": false,
+                          "async": false,
+                          "params": [
+                            {
+                              "type": "Identifier",
+                              "start": 1047,
+                              "end": 1052,
+                              "name": "param"
+                            }
+                          ],
+                          "body": {
+                            "type": "ArrowFunctionExpression",
+                            "start": 1057,
+                            "end": 1149,
+                            "id": null,
+                            "expression": false,
+                            "generator": false,
+                            "async": false,
+                            "params": [
+                              {
+                                "type": "ObjectPattern",
+                                "start": 1058,
+                                "end": 1065,
+                                "properties": [
+                                  {
+                                    "type": "Property",
+                                    "start": 1060,
+                                    "end": 1063,
+                                    "method": false,
+                                    "shorthand": true,
+                                    "computed": false,
+                                    "key": {
+                                      "type": "Identifier",
+                                      "start": 1060,
+                                      "end": 1063,
+                                      "name": "get"
+                                    },
+                                    "value": {
+                                      "type": "Identifier",
+                                      "start": 1060,
+                                      "end": 1063,
+                                      "name": "get"
+                                    },
+                                    "kind": "init"
+                                  }
+                                ]
+                              }
+                            ],
+                            "body": {
+                              "type": "BlockStatement",
+                              "start": 1070,
+                              "end": 1149,
+                              "body": [
+                                {
+                                  "type": "VariableDeclaration",
+                                  "start": 1075,
+                                  "end": 1124,
+                                  "declarations": [
+                                    {
+                                      "type": "VariableDeclarator",
+                                      "start": 1081,
+                                      "end": 1123,
+                                      "id": {
+                                        "type": "Identifier",
+                                        "start": 1081,
+                                        "end": 1086,
+                                        "name": "count"
+                                      },
+                                      "init": {
+                                        "type": "CallExpression",
+                                        "start": 1089,
+                                        "end": 1123,
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "start": 1089,
+                                          "end": 1092,
+                                          "name": "get"
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "CallExpression",
+                                            "start": 1093,
+                                            "end": 1122,
+                                            "callee": {
+                                              "type": "Identifier",
+                                              "start": 1093,
+                                              "end": 1115,
+                                              "name": "doubleCountStateFamily"
+                                            },
+                                            "arguments": [
+                                              {
+                                                "type": "Identifier",
+                                                "start": 1116,
+                                                "end": 1121,
+                                                "name": "param"
+                                              }
+                                            ],
+                                            "optional": false
+                                          }
+                                        ],
+                                        "optional": false
+                                      }
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                {
+                                  "type": "ReturnStatement",
+                                  "start": 1128,
+                                  "end": 1145,
+                                  "argument": {
+                                    "type": "BinaryExpression",
+                                    "start": 1135,
+                                    "end": 1144,
+                                    "left": {
+                                      "type": "Identifier",
+                                      "start": 1135,
+                                      "end": 1140,
+                                      "name": "count"
+                                    },
+                                    "operator": "*",
+                                    "right": {
+                                      "type": "Literal",
+                                      "start": 1143,
+                                      "end": 1144,
+                                      "value": 2,
+                                      "raw": "2"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "kind": "init"
+                      }
+                    ]
+                  }
+                ],
+                "optional": false
+              },
+              "kind": "init"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selectorFamilies": [
+    {
+      "name": "doubleCountStateFamily",
+      "arguments": [
+        {
+          "type": "ObjectExpression",
+          "start": 746,
+          "end": 883,
+          "properties": [
+            {
+              "type": "Property",
+              "start": 749,
+              "end": 778,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 749,
+                "end": 752,
+                "name": "key"
+              },
+              "value": {
+                "type": "Literal",
+                "start": 754,
+                "end": 778,
+                "value": "doubleCountStateFamily",
+                "raw": "'doubleCountStateFamily'"
+              },
+              "kind": "init"
+            },
+            {
+              "type": "Property",
+              "start": 781,
+              "end": 880,
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 781,
+                "end": 784,
+                "name": "get"
+              },
+              "value": {
+                "type": "ArrowFunctionExpression",
+                "start": 786,
+                "end": 880,
+                "id": null,
+                "expression": true,
+                "generator": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 787,
+                    "end": 792,
+                    "name": "param"
+                  }
+                ],
+                "body": {
+                  "type": "ArrowFunctionExpression",
+                  "start": 797,
+                  "end": 880,
+                  "id": null,
+                  "expression": false,
+                  "generator": false,
+                  "async": false,
+                  "params": [
+                    {
+                      "type": "ObjectPattern",
+                      "start": 798,
+                      "end": 805,
+                      "properties": [
+                        {
+                          "type": "Property",
+                          "start": 800,
+                          "end": 803,
+                          "method": false,
+                          "shorthand": true,
+                          "computed": false,
+                          "key": {
+                            "type": "Identifier",
+                            "start": 800,
+                            "end": 803,
+                            "name": "get"
+                          },
+                          "value": {
+                            "type": "Identifier",
+                            "start": 800,
+                            "end": 803,
+                            "name": "get"
+                          },
+                          "kind": "init"
+                        }
+                      ]
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "start": 810,
+                    "end": 880,
+                    "body": [
+                      {
+                        "type": "VariableDeclaration",
+                        "start": 814,
+                        "end": 857,
+                        "declarations": [
+                          {
+                            "type": "VariableDeclarator",
+                            "start": 820,
+                            "end": 856,
+                            "id": {
+                              "type": "Identifier",
+                              "start": 820,
+                              "end": 825,
+                              "name": "count"
+                            },
+                            "init": {
+                              "type": "CallExpression",
+                              "start": 828,
+                              "end": 856,
+                              "callee": {
+                                "type": "Identifier",
+                                "start": 828,
+                                "end": 831,
+                                "name": "get"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "CallExpression",
+                                  "start": 832,
+                                  "end": 855,
+                                  "callee": {
+                                    "type": "Identifier",
+                                    "start": 832,
+                                    "end": 848,
+                                    "name": "countStateFamily"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Identifier",
+                                      "start": 849,
+                                      "end": 854,
+                                      "name": "param"
+                                    }
+                                  ],
+                                  "optional": false
+                                }
+                              ],
+                              "optional": false
+                            }
+                          }
+                        ],
+                        "kind": "const"
+                      },
+                      {
+                        "type": "ReturnStatement",
+                        "start": 860,
+                        "end": 877,
+                        "argument": {
+                          "type": "BinaryExpression",
+                          "start": 867,
+                          "end": 876,
+                          "left": {
+                            "type": "Identifier",
+                            "start": 867,
+                            "end": 872,
+                            "name": "count"
+                          },
+                          "operator": "*",
+                          "right": {
+                            "type": "Literal",
+                            "start": 875,
+                            "end": 876,
+                            "value": 2,
+                            "raw": "2"
+                          }
+                        }
+                      }
+                    ]
+                  }
                 }
               },
               "kind": "init"
@@ -451,6 +963,26 @@ exports[`extract > should extract atoms and selectors 1`] = `
       "name": "doubleCountState",
       "deps": [
         "countState"
+      ]
+    }
+  ],
+  "atomFamilyDeps": [
+    {
+      "name": "countStateFamily",
+      "deps": []
+    },
+    {
+      "name": "quadrupleCountStateFamily",
+      "deps": [
+        "doubleCountStateFamily"
+      ]
+    }
+  ],
+  "selectorFamilyDeps": [
+    {
+      "name": "doubleCountStateFamily",
+      "deps": [
+        "countStateFamily"
       ]
     }
   ]

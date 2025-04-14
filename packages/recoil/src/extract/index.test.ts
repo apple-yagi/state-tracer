@@ -16,7 +16,7 @@ describe("extract", () => {
 		const iff = await createIFF({
 			src: {
 				"state.js": dedent`
-            import { atom, selector } from "recoil";
+            import { atom, selector, atomFamily, selectorFamily } from "recoil";
 
             export const countState = atom({
               key: 'countState',
@@ -37,6 +37,30 @@ describe("extract", () => {
 								key: 'quadrupleCountState',
 								get: ({ get }) => {
 									const count = get(doubleCountState);
+									return count * 2;
+								},
+							}),
+						});
+
+						export const countStateFamily = atomFamily({
+							key: 'countStateFamily',
+							default: (param) => param,
+						});
+
+						export const doubleCountStateFamily = selectorFamily({
+							key: 'doubleCountStateFamily',
+							get: (param) => ({ get }) => {
+								const count = get(countStateFamily(param));
+								return count * 2;
+							},
+						});
+
+						export const quadrupleCountStateFamily = atomFamily({
+							key: 'quadrupleCountStateFamily',
+							default: selectorFamily({
+								key: 'quadrupleCountStateFamily',
+								get: (param) => ({ get }) => {
+									const count = get(doubleCountStateFamily(param));
 									return count * 2;
 								},
 							}),
