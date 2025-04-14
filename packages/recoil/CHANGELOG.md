@@ -1,4 +1,4 @@
-# @state-tracer/recoil
+# state-tracer-recoil
 
 ## 0.0.1
 

@@ -1,15 +1,11 @@
 {
-	"name": "@state-tracer/recoil",
+	"name": "state-tracer-recoil",
 	"version": "0.0.1",
 	"description": "Visualize and trace state dependencies in Recoil with an interactive data flow graph.",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": [
-		"bin",
-		"src",
-		"dist"
-	],
+	"files": ["bin", "src", "dist"],
 	"scripts": {
 		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
@@ -27,9 +23,7 @@
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
-	"keywords": [
-		"recoil"
-	],
+	"keywords": ["recoil"],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
