@@ -4,7 +4,7 @@ import { describe, it } from "node:test";
 import { defineIFFCreator } from "@mizdra/inline-fixture-files";
 import { randomUUID } from "node:crypto";
 import dedent from "dedent";
-import { extractAtomsAndSelectorsWithDeps } from "./index.ts";
+import { extractAtomsAndSelectors } from "./extract.ts";
 
 const fixtureDir = join(tmpdir(), "@state-tracer/recoil");
 const createIFF = defineIFFCreator({
@@ -69,10 +69,23 @@ describe("extract", () => {
 			},
 		});
 
-		const result = extractAtomsAndSelectorsWithDeps(iff.paths["src/state.js"]);
+		const result = extractAtomsAndSelectors(iff.paths["src/state.js"]);
 
-		context.assert.snapshot(result, {
-			serializers: [(value) => JSON.stringify(value, null, 2)],
-		});
+		context.assert.equal(result.atoms.length, 2);
+		context.assert.equal(result.selectors.length, 1);
+		context.assert.equal(result.atomFamilies.length, 2);
+		context.assert.equal(result.selectorFamilies.length, 1);
+		context.assert.equal(result.atoms[0]?.name, "countState");
+		context.assert.equal(result.atoms[1]?.name, "quadrupleCountState");
+		context.assert.equal(result.selectors[0]?.name, "doubleCountState");
+		context.assert.equal(result.atomFamilies[0]?.name, "countStateFamily");
+		context.assert.equal(
+			result.atomFamilies[1]?.name,
+			"quadrupleCountStateFamily",
+		);
+		context.assert.equal(
+			result.selectorFamilies[0]?.name,
+			"doubleCountStateFamily",
+		);
 	});
 });

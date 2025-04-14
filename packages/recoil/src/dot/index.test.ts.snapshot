@@ -2,15 +2,9 @@ exports[`generateDot > should generate a dot representation of the dependency gr
 digraph {
   rankdir=LR;
   node [shape=box, style=rounded, fontname="Arial"];
-    "countState";
-    "doubleCountState";
-    "quadrupleCountState";
-    "countStateFamily";
-    "doubleCountStateFamily";
-    "quadrupleCountStateFamily";
-    countState -> doubleCountState;
-  doubleCountState -> quadrupleCountState;
-  countStateFamily -> doubleCountStateFamily;
-  doubleCountStateFamily -> quadrupleCountStateFamily;
-z}
+    "atom1" -> "selector1";
+  "atom2" -> "selector2";
+  "selector1" -> "atom3";
+  "botchi";
+}
 `;

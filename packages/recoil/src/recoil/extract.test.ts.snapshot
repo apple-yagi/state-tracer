@@ -1,5 +1,6 @@
 exports[`extract > should extract atoms and selectors 1`] = `
 {
+  "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js",
   "atoms": [
     {
       "name": "countState",
@@ -55,7 +56,8 @@ exports[`extract > should extract atoms and selectors 1`] = `
             }
           ]
         }
-      ]
+      ],
+      "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js"
     },
     {
       "name": "quadrupleCountState",
@@ -271,7 +273,8 @@ exports[`extract > should extract atoms and selectors 1`] = `
             }
           ]
         }
-      ]
+      ],
+      "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js"
     }
   ],
   "selectors": [
@@ -431,7 +434,8 @@ exports[`extract > should extract atoms and selectors 1`] = `
             }
           ]
         }
-      ]
+      ],
+      "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js"
     }
   ],
   "atomFamilies": [
@@ -505,7 +509,8 @@ exports[`extract > should extract atoms and selectors 1`] = `
             }
           ]
         }
-      ]
+      ],
+      "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js"
     },
     {
       "name": "quadrupleCountStateFamily",
@@ -752,7 +757,8 @@ exports[`extract > should extract atoms and selectors 1`] = `
             }
           ]
         }
-      ]
+      ],
+      "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js"
     }
   ],
   "selectorFamilies": [
@@ -943,48 +949,10 @@ exports[`extract > should extract atoms and selectors 1`] = `
             }
           ]
         }
-      ]
+      ],
+      "filePath": "/var/folders/vr/fsbg1t4n5tn4_wzcvb91qs040000gn/T/@state-tracer/recoil/d0af410d-33d5-4052-9a96-6498441f3a56/src/state.js"
     }
   ],
-  "atomDeps": [
-    {
-      "name": "countState",
-      "deps": []
-    },
-    {
-      "name": "quadrupleCountState",
-      "deps": [
-        "doubleCountState"
-      ]
-    }
-  ],
-  "selectorDeps": [
-    {
-      "name": "doubleCountState",
-      "deps": [
-        "countState"
-      ]
-    }
-  ],
-  "atomFamilyDeps": [
-    {
-      "name": "countStateFamily",
-      "deps": []
-    },
-    {
-      "name": "quadrupleCountStateFamily",
-      "deps": [
-        "doubleCountStateFamily"
-      ]
-    }
-  ],
-  "selectorFamilyDeps": [
-    {
-      "name": "doubleCountStateFamily",
-      "deps": [
-        "countStateFamily"
-      ]
-    }
-  ]
+  "imports": []
 }
 `;
