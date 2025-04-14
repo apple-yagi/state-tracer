@@ -6,11 +6,6 @@ export type CliArgs = {
 };
 
 const options: ParseArgsOptionsConfig = {
-	dir: {
-		type: "string",
-		short: "d",
-		multiple: false,
-	},
 	output: {
 		type: "string",
 		short: "o",
@@ -20,10 +15,14 @@ const options: ParseArgsOptionsConfig = {
 };
 
 export function parseCliArgs(args: string[]): CliArgs {
-	const { values } = parseArgs({ args, options });
+	const { values, positionals } = parseArgs({
+		args,
+		allowPositionals: true,
+		options,
+	});
 
 	return {
-		dir: values.dir,
+		dir: positionals[0] ?? ".",
 		output: values.output,
 	} as CliArgs;
 }
