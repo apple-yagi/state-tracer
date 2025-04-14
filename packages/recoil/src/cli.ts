@@ -1,6 +1,6 @@
 import { parseArgs, type ParseArgsOptionsConfig } from "node:util";
 
-type CliArgs = {
+export type CliArgs = {
 	dir: string;
 	output: string;
 };

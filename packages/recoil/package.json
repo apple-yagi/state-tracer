@@ -1,24 +1,38 @@
 {
 	"name": "@state-tracer/recoil",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"description": "Visualize and trace state dependencies in Recoil with an interactive data flow graph.",
 	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": ["bin", "src", "dist"],
 	"scripts": {
+		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
 		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
 	},
-	"keywords": [
-		"recoil"
-	],
+	"bin": {
+		"str": "bin/str.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/apple-yagi/state-tracer.git",
+		"directory": "packages/recoil"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"keywords": ["recoil"],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
 	"peerDependencies": {
+		"@hpcc-js/wasm": "^2.22.4",
 		"oxc-parser": "^0.63.0",
 		"oxc-walker": "^0.2.4"
 	},
 	"devDependencies": {
-		"@hpcc-js/wasm": "^2.22.4",
 		"@mizdra/inline-fixture-files": "^2.1.1",
 		"dedent": "^1.5.3",
 		"recoil": "^0.7.7"
