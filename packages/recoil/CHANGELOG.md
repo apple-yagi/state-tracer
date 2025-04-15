@@ -1,5 +1,11 @@
 # state-tracer-recoil
 
+## 0.0.3
+
+### Patch Changes
+
+- 2d5816b: Include atomFamily and selectorFamily in knownNames definition
+
 ## 0.0.2
 
 ### Patch Changes
