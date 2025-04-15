@@ -1,5 +1,11 @@
 # state-tracer-recoil
 
+## 0.0.4
+
+### Patch Changes
+
+- d6d5646: Include atomFamilies and selectorFamilies in defs
+
 ## 0.0.3
 
 ### Patch Changes
