@@ -44,7 +44,10 @@ export function resolveDeps(
 			return undefined;
 		};
 
-		const defs = file.atoms.concat(file.selectors);
+		const defs = file.atoms
+			.concat(file.selectors)
+			.concat(file.atomFamilies)
+			.concat(file.selectorFamilies);
 		for (const def of defs) {
 			for (const arg of def.arguments) {
 				walk(arg, {
