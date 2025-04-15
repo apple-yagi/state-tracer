@@ -25,7 +25,11 @@ export function resolveDeps(
 	const deps: Edge[] = [];
 
 	for (const file of extractResults) {
-		const knownNames = file.atoms.concat(file.selectors).map((d) => d.name);
+		const knownNames = file.atoms
+			.concat(file.selectors)
+			.concat(file.atomFamilies)
+			.concat(file.selectorFamilies)
+			.map((d) => d.name);
 
 		const resolvedImports = new Map<string, string>();
 		for (const imp of importsMap.get(file.filePath) || []) {
