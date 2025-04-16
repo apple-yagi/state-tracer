@@ -55,11 +55,12 @@ export function resolveDeps(
 						if (node.type === "Identifier") {
 							const resolvedName = resolveName(node.name);
 							if (resolvedName) {
-								deps.push({ from: def.name, to: resolvedName });
-							} else {
-								const resolvedImport = resolvedImports.get(node.name);
-								if (resolvedImport) {
-									deps.push({ from: def.name, to: resolvedImport });
+								if (
+									!deps.some(
+										(dep) => dep.from === def.name && dep.to === resolvedName,
+									)
+								) {
+									deps.push({ from: def.name, to: resolvedName });
 								}
 							}
 						}
