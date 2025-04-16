@@ -1,5 +1,11 @@
 # state-tracer-recoil
 
+## 0.0.5
+
+### Patch Changes
+
+- a34d334: Prevent duplicate dependencies in resolveDeps function
+
 ## 0.0.4
 
 ### Patch Changes
