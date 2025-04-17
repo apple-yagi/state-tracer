@@ -68,35 +68,41 @@ export function extractAtomsAndSelectors(filePath: string) {
 			if (node.callee.type === "Identifier") {
 				if (
 					Object.values(localNames).includes(node.callee.name) &&
-					// ref https://github.com/oxc-project/oxc-walker/pull/91
-					// @ts-ignore
 					parent?.type === "VariableDeclarator"
 				) {
-					if (node.callee.name === localNames.atom) {
+					if (
+						node.callee.name === localNames.atom &&
+						parent.id.type === "Identifier"
+					) {
 						atoms.push({
-							// @ts-ignore
-							name: parent?.id.name,
+							name: parent.id.name,
 							arguments: node.arguments,
 							filePath,
 						});
-					} else if (node.callee.name === localNames.selector) {
+					} else if (
+						node.callee.name === localNames.selector &&
+						parent.id.type === "Identifier"
+					) {
 						selectors.push({
-							// @ts-ignore
-							name: parent?.id.name,
+							name: parent.id.name,
 							arguments: node.arguments,
 							filePath,
 						});
-					} else if (node.callee.name === localNames.atomFamily) {
+					} else if (
+						node.callee.name === localNames.atomFamily &&
+						parent.id.type === "Identifier"
+					) {
 						atomFamilies.push({
-							// @ts-ignore
-							name: parent?.id.name,
+							name: parent.id.name,
 							arguments: node.arguments,
 							filePath,
 						});
-					} else if (node.callee.name === localNames.selectorFamily) {
+					} else if (
+						node.callee.name === localNames.selectorFamily &&
+						parent.id.type === "Identifier"
+					) {
 						selectorFamilies.push({
-							// @ts-ignore
-							name: parent?.id.name,
+							name: parent.id.name,
 							arguments: node.arguments,
 							filePath,
 						});
