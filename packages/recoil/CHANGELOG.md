@@ -1,5 +1,11 @@
 # state-tracer-recoil
 
+## 0.0.6
+
+### Patch Changes
+
+- f107e60: Update oxc-walker
+
 ## 0.0.5
 
 ### Patch Changes
