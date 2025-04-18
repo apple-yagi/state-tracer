@@ -5,15 +5,12 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": [
-		"bin",
-		"src",
-		"dist"
-	],
+	"files": ["bin", "src", "dist"],
 	"scripts": {
 		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
-		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
+		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts",
+		"test:e2e": "node ./bin/stj.js -o ./src/__tests__/jotai-graph.svg"
 	},
 	"bin": {
 		"str": "bin/stj.js"
@@ -27,10 +24,7 @@
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
-	"keywords": [
-		"state-tracer",
-		"jotai"
-	],
+	"keywords": ["state-tracer", "jotai"],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
