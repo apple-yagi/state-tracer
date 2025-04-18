@@ -1,30 +1,38 @@
 {
-	"name": "@state-tracer/core",
-	"version": "0.1.0",
-	"description": "Core library for state-tracer.",
+	"name": "@state-tracer/jotai",
+	"version": "0.0.0",
+	"description": "Visualize and trace state dependencies in jotai with an interactive data flow graph.",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": ["src", "dist"],
+	"files": ["bin", "src", "dist"],
 	"scripts": {
 		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
 		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
 	},
+	"bin": {
+		"str": "bin/stj.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/apple-yagi/state-tracer.git",
-		"directory": "packages/core"
+		"directory": "packages/jotai"
 	},
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
-	"keywords": ["state-tracer"],
+	"keywords": ["state-tracer", "jotai"],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
 	"peerDependencies": {
-		"@hpcc-js/wasm": "^2.22.4"
+		"@state-tracer/core": "workspace:*",
+		"oxc-parser": "catalog:",
+		"oxc-walker": "catalog:"
+	},
+	"devDependencies": {
+		"jotai": "^2.12.3"
 	}
 }

@@ -1,2 +1,6 @@
 packages:
   - 'packages/*'
+
+catalog:
+  'oxc-parser': ^0.63.0
+  'oxc-walker': ^0.2.5

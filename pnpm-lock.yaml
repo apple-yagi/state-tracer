@@ -4,6 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    oxc-parser:
+      specifier: ^0.63.0
+      version: 0.63.0
+    oxc-walker:
+      specifier: ^0.2.5
+      version: 0.2.5
+
 importers:
 
   .:
@@ -14,18 +23,40 @@ importers:
       '@changesets/cli':
         specifier: ^2.29.0
         version: 2.29.0
+      '@mizdra/inline-fixture-files':
+        specifier: ^2.1.1
+        version: 2.1.1
       '@types/node':
         specifier: ^22.14.1
         version: 22.14.1
+      dedent:
+        specifier: ^1.5.3
+        version: 1.5.3
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
 
   packages/core:
-    devDependencies:
+    dependencies:
       '@hpcc-js/wasm':
         specifier: ^2.22.4
         version: 2.22.4
+
+  packages/jotai:
+    dependencies:
+      '@state-tracer/core':
+        specifier: workspace:*
+        version: link:../core
+      oxc-parser:
+        specifier: 'catalog:'
+        version: 0.63.0
+      oxc-walker:
+        specifier: 'catalog:'
+        version: 0.2.5(oxc-parser@0.63.0)
+    devDependencies:
+      jotai:
+        specifier: ^2.12.3
+        version: 2.12.3(react@19.1.0)
 
   packages/recoil:
     dependencies:
@@ -33,18 +64,12 @@ importers:
         specifier: workspace:*
         version: link:../core
       oxc-parser:
-        specifier: ^0.63.0
+        specifier: 'catalog:'
         version: 0.63.0
       oxc-walker:
-        specifier: ^0.2.5
+        specifier: 'catalog:'
         version: 0.2.5(oxc-parser@0.63.0)
     devDependencies:
-      '@mizdra/inline-fixture-files':
-        specifier: ^2.1.1
-        version: 2.1.1
-      dedent:
-        specifier: ^1.5.3
-        version: 1.5.3
       recoil:
         specifier: ^0.7.7
         version: 0.7.7(react@19.1.0)
@@ -189,8 +214,8 @@ packages:
     resolution: {integrity: sha512-cU3mzStgBUThi5FllLhGNLj0BIlNhraUodpb2DkuSPoBmrrYKR7vsqbtX+H+kR+Xx7yudZM0h/fAJJHEc/IP6g==}
     engines: {node: '>=18.0.0'}
 
-  '@napi-rs/wasm-runtime@0.2.8':
-    resolution: {integrity: sha512-OBlgKdX7gin7OIq4fadsjpg+cp2ZphvAIKucHsNfTdJiqdOmOEwQd/bHi0VwNrcw5xpBJyUw6cK/QilCqy1BSg==}
+  '@napi-rs/wasm-runtime@0.2.9':
+    resolution: {integrity: sha512-OKRBiajrrxB9ATokgEQoG87Z25c67pCpYcCwmXYX8PBftC9pBfN18gnm/fh1wurSLEKIAt+QRFLFCQISrb66Jg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -456,6 +481,18 @@ packages:
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  jotai@2.12.3:
+    resolution: {integrity: sha512-DpoddSkmPGXMFtdfnoIHfueFeGP643nqYUWC6REjUcME+PG2UkAtYnLbffRDw3OURI9ZUTcRWkRGLsOvxuWMCg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=17.0.0'
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
 
   js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
@@ -943,7 +980,7 @@ snapshots:
 
   '@mizdra/inline-fixture-files@2.1.1': {}
 
-  '@napi-rs/wasm-runtime@0.2.8':
+  '@napi-rs/wasm-runtime@0.2.9':
     dependencies:
       '@emnapi/core': 1.4.1
       '@emnapi/runtime': 1.4.1
@@ -985,7 +1022,7 @@ snapshots:
 
   '@oxc-parser/binding-wasm32-wasi@0.63.0':
     dependencies:
-      '@napi-rs/wasm-runtime': 0.2.8
+      '@napi-rs/wasm-runtime': 0.2.9
     optional: true
 
   '@oxc-parser/binding-win32-arm64-msvc@0.63.0':
@@ -1165,6 +1202,10 @@ snapshots:
   is-windows@1.0.2: {}
 
   isexe@2.0.0: {}
+
+  jotai@2.12.3(react@19.1.0):
+    optionalDependencies:
+      react: 19.1.0
 
   js-yaml@3.14.1:
     dependencies:

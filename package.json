@@ -11,7 +11,9 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@changesets/cli": "^2.29.0",
+		"@mizdra/inline-fixture-files": "^2.1.1",
 		"@types/node": "^22.14.1",
+		"dedent": "^1.5.3",
 		"typescript": "^5.8.3"
 	}
 }
