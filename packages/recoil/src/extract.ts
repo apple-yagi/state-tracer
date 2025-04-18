@@ -9,17 +9,6 @@ export type ExtractResult = {
 	filePath: string;
 };
 
-export type ImportInfo = {
-	importedName: string;
-	sourcePath: string;
-	resolvedPath: string;
-};
-
-export type Deps = {
-	name: string;
-	deps: string[];
-};
-
 export function extractAtomsAndSelectors(filePath: string) {
 	const code = readFileSync(filePath, "utf-8");
 
@@ -34,7 +23,6 @@ export function extractAtomsAndSelectors(filePath: string) {
 	const selectors: ExtractResult[] = [];
 	const atomFamilies: ExtractResult[] = [];
 	const selectorFamilies: ExtractResult[] = [];
-	const imports: ImportInfo[] = [];
 
 	parseAndWalk(code, filePath, (node, parent) => {
 		if (
@@ -52,14 +40,6 @@ export function extractAtomsAndSelectors(filePath: string) {
 					if (imported.name === "atomFamily") localNames.atomFamily = local;
 					if (imported.name === "selectorFamily")
 						localNames.selectorFamily = local;
-				}
-			} else {
-				if (imported.type === "Identifier") {
-					imports.push({
-						importedName: local,
-						sourcePath: source,
-						resolvedPath: `${resolve(dirname(filePath), source)}.ts`,
-					});
 				}
 			}
 		}
@@ -118,6 +98,5 @@ export function extractAtomsAndSelectors(filePath: string) {
 		selectors,
 		atomFamilies,
 		selectorFamilies,
-		imports,
 	};
 }
