@@ -5,11 +5,7 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": [
-		"bin",
-		"src",
-		"dist"
-	],
+	"files": ["bin", "src", "dist"],
 	"scripts": {
 		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
@@ -27,21 +23,16 @@
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
-	"keywords": [
-		"state-tracer",
-		"recoil"
-	],
+	"keywords": ["state-tracer", "recoil"],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
 	"peerDependencies": {
 		"@state-tracer/core": "workspace:*",
-		"oxc-parser": "^0.63.0",
-		"oxc-walker": "^0.2.5"
+		"oxc-parser": "catalog:",
+		"oxc-walker": "catalog:"
 	},
 	"devDependencies": {
-		"@mizdra/inline-fixture-files": "^2.1.1",
-		"dedent": "^1.5.3",
 		"recoil": "^0.7.7"
 	}
 }
