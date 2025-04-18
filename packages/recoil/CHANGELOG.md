@@ -1,5 +1,11 @@
 # state-tracer-recoil
 
+## 1.0.1
+
+### Patch Changes
+
+- 485bd92: Refactor recoil package code
+
 ## 1.0.0
 
 ### Minor Changes
