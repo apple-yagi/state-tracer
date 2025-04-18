@@ -5,6 +5,7 @@
 	"scripts": {
 		"build": "pnpm --filter './packages/*' build",
 		"test": "pnpm --filter './packages/*' test",
+		"test:e2e": "pnpm --filter './packages/*' test:e2e",
 		"lint": "biome lint",
 		"release": "changeset publish"
 	},

@@ -13,7 +13,8 @@
 	"scripts": {
 		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
-		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
+		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts",
+		"test:e2e": "node ./bin/str.js -o ./src/__tests__/recoil-graph.svg"
 	},
 	"bin": {
 		"str": "bin/str.js"

@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-24.04
 
     steps:
@@ -16,3 +16,9 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
       - run: pnpm run test
+      - run: pnpm run build
+      - run: |
+          pnpm run test:e2e
+          # Fail if there are any Git diffs.
+          git add -N .
+          git diff --name-only --exit-code
