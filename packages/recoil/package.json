@@ -23,7 +23,7 @@
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
-	"keywords": ["recoil"],
+	"keywords": ["state-tracer", "recoil"],
 	"author": "apple-yagi",
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",

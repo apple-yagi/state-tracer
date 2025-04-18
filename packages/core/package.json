@@ -1,13 +1,24 @@
 {
 	"name": "@state-tracer/core",
+	"version": "0.0.0",
 	"description": "Core library for state-tracer.",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"files": ["src", "dist"],
 	"scripts": {
 		"build": "tsc",
 		"test": "node --experimental-strip-types --test src/**/*.test.ts",
 		"test:u": "node --experimental-strip-types --test --test-update-snapshots src/**/*.test.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/apple-yagi/state-tracer.git",
+		"directory": "packages/core"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
 	},
 	"keywords": ["state-tracer"],
 	"author": "apple-yagi",
