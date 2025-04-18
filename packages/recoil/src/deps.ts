@@ -1,16 +1,11 @@
 import { walk } from "oxc-walker";
-import type {
-	extractAtomsAndSelectors,
-	ExtractResult,
-	ImportInfo,
-} from "./extract.ts";
+import type { extractAtomsAndSelectors, ExtractResult } from "./extract.ts";
 import type { Edge } from "@state-tracer/core";
 
 export function resolveDeps(
 	extractResults: ReturnType<typeof extractAtomsAndSelectors>[],
 ) {
 	const allDefs = new Map<string, ExtractResult>();
-	const importsMap = new Map<string, ImportInfo[]>();
 
 	for (const file of extractResults) {
 		for (const atom of file.atoms) allDefs.set(atom.name, atom);
@@ -19,7 +14,6 @@ export function resolveDeps(
 			allDefs.set(atomFamily.name, atomFamily);
 		for (const selectorFamily of file.selectorFamilies)
 			allDefs.set(selectorFamily.name, selectorFamily);
-		importsMap.set(file.filePath, file.imports);
 	}
 
 	const deps: Edge[] = [];
@@ -30,11 +24,6 @@ export function resolveDeps(
 			.concat(file.atomFamilies)
 			.concat(file.selectorFamilies)
 			.map((d) => d.name);
-
-		const resolvedImports = new Map<string, string>();
-		for (const imp of importsMap.get(file.filePath) || []) {
-			resolvedImports.set(imp.importedName, imp.resolvedPath);
-		}
 
 		const resolveName = (name: string): string | undefined => {
 			if (knownNames.includes(name)) return name;
