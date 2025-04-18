@@ -1,4 +1,4 @@
-# state-tracer-recoil
+# @state-tracer/recoil
 
 Visualize and trace state dependencies in Recoil with an interactive data flow graph.
 
@@ -17,7 +17,7 @@ Visualize and trace state dependencies in Recoil with an interactive data flow g
 ## 📥 Installation
 
 ```console
-pnpm add -D state-tracer-recoil
+pnpm add -D @state-tracer/recoil
 ```
 
 ## 🛠 Usage
