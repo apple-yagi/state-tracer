@@ -1,5 +1,16 @@
 # state-tracer-recoil
 
+## 1.0.0
+
+### Minor Changes
+
+- f59e3a3: Add core library and initial implementation for state-tracer
+
+### Patch Changes
+
+- Updated dependencies [8bb27bc]
+  - @state-tracer/core@0.1.0
+
 ## 0.0.6
 
 ### Patch Changes
