@@ -4,7 +4,7 @@ import type {
 	ExtractResult,
 	ImportInfo,
 } from "./extract.ts";
-import type { Edge } from "../dot/index.ts";
+import type { Edge } from "@state-tracer/core";
 
 export function resolveDeps(
 	extractResults: ReturnType<typeof extractAtomsAndSelectors>[],

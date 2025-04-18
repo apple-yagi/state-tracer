@@ -21,11 +21,17 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
 
-  packages/recoil:
-    dependencies:
+  packages/core:
+    devDependencies:
       '@hpcc-js/wasm':
         specifier: ^2.22.4
         version: 2.22.4
+
+  packages/recoil:
+    dependencies:
+      '@state-tracer/core':
+        specifier: workspace:*
+        version: link:../core
       oxc-parser:
         specifier: ^0.63.0
         version: 0.63.0
