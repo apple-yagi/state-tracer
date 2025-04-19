@@ -25,6 +25,6 @@
 	"license": "MIT",
 	"packageManager": "pnpm@10.8.0",
 	"peerDependencies": {
-		"@hpcc-js/wasm": "^2.22.4"
+		"@hpcc-js/wasm-graphviz": "^1.7.0"
 	}
 }
