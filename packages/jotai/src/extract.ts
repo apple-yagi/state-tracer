@@ -13,7 +13,16 @@ export function extractAtoms(filePath: string) {
 
 	const localNames = {
 		atom: "",
+		atomFamily: "",
+		atomWithRefresh: "",
+		atomWithDefault: "",
+		atomWithLazy: "",
+		atomWithReducer: "",
+		atomWithStorage: "",
+		atomWithObservable: "",
+		atomWithReset: "",
 	};
+	const localNameKeys = Object.keys(localNames);
 
 	const atoms: ExtractResult[] = [];
 
@@ -30,6 +39,12 @@ export function extractAtoms(filePath: string) {
 				if (imported.type === "Identifier") {
 					if (imported.name === "atom") localNames.atom = local;
 				}
+			} else if (source === "jotai/utils") {
+				if (imported.type === "Identifier") {
+					if (localNameKeys.includes(imported.name)) {
+						localNames[imported.name as keyof typeof localNames] = local;
+					}
+				}
 			}
 		}
 
@@ -40,7 +55,7 @@ export function extractAtoms(filePath: string) {
 					parent?.type === "VariableDeclarator"
 				) {
 					if (
-						node.callee.name === localNames.atom &&
+						Object.values(localNames).includes(node.callee.name) &&
 						parent.id.type === "Identifier"
 					) {
 						atoms.push({
