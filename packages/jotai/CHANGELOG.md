@@ -1,5 +1,13 @@
 # @state-tracer/jotai
 
+## 1.0.1
+
+### Patch Changes
+
+- 0dbea5a: update Graphviz import to use wasm-graphviz package
+- Updated dependencies [0dbea5a]
+  - @state-tracer/core@0.1.1
+
 ## 1.0.0
 
 ### Major Changes
