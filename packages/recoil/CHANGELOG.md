@@ -1,5 +1,11 @@
 # state-tracer-recoil
 
+## 1.0.3
+
+### Patch Changes
+
+- 3d0d4cb: Add atom and selector counts to the output log
+
 ## 1.0.2
 
 ### Patch Changes
