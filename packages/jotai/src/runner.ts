@@ -13,4 +13,12 @@ export async function run(args: CliArgs) {
 
 	writeSvgSync(deps, output);
 	console.log(`✅ SVG saved to ${output}`);
+
+	const atomCount = extractResults
+		.map((result) => result.atoms.length)
+		.reduce((a, b) => a + b, 0);
+	console.log(
+		`-------------
+atom count: ${atomCount}`,
+	);
 }
