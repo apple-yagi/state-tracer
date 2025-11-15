@@ -1,5 +1,11 @@
 # @state-tracer/jotai
 
+## 1.1.1
+
+### Patch Changes
+
+- 3067936: fix(jotai): fix detection for custom atomWith helpers
+
 ## 1.1.0
 
 ### Minor Changes
