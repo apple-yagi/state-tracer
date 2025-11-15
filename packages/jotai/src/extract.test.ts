@@ -117,4 +117,38 @@ describe("extractAtoms", () => {
 			["fallbackAtom", "cachedAtom"],
 		);
 	});
+
+	it("should detect custom atomWith helpers defined in another module", async (context: TestContext) => {
+		const iff = await createIFF({
+			src: {
+				"custom-atom.ts": dedent`
+          import { atom } from "jotai";
+
+          export function atomWithDefaultSync(getter) {
+            const baseAtom = atom((get) => getter(get));
+            const storageAtom = atom(null);
+            return atom((get) => get(storageAtom) ?? get(baseAtom));
+          }
+        `,
+				"state.ts": dedent`
+          import { atom } from "jotai";
+          import { atomWithDefaultSync } from "./custom-atom";
+
+          const initAtom = atom(Promise.resolve([]));
+
+          export const pinnedConvsAtom = atomWithDefaultSync((get) => get(initAtom));
+
+          export const indexedConvsAtom = atom((get) => get(pinnedConvsAtom));
+        `,
+			},
+		});
+
+		const result = extractAtoms(iff.paths["src/state.ts"]);
+
+		context.assert.equal(result.atoms.length, 3);
+		context.assert.deepStrictEqual(
+			result.atoms.map((atom) => atom.name),
+			["initAtom", "pinnedConvsAtom", "indexedConvsAtom"],
+		);
+	});
 });
