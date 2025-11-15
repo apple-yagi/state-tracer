@@ -1,10 +1,11 @@
 import { readFileSync } from "node:fs";
-import { parseAndWalk, walk } from "oxc-walker";
+import { parseAndWalk, walk, type Node } from "oxc-walker";
 import type {
 	Argument,
 	ArrowFunctionExpression,
 	Function as FunctionNode,
 	FunctionBody,
+	VariableDeclarator,
 } from "oxc-parser";
 
 export type ExtractResult = {
@@ -39,12 +40,15 @@ export function extractAtoms(filePath: string): ExtractedFile {
 	const localNameValues = () =>
 		Object.values(localNames).filter((name): name is string => !!name);
 	const resolvedFactoryNames = new Set<string>();
+	const parentMap = new WeakMap<Node, Node>();
 	const registerFactory = (name?: string) => {
 		if (name) resolvedFactoryNames.add(name);
 	};
+	const hasAtomWithPrefix = (name: string) => name.startsWith("atomWith");
 	const isAtomFactory = (name: string | undefined) => {
 		if (!name) return false;
 		if (resolvedFactoryNames.has(name)) return true;
+		if (hasAtomWithPrefix(name)) return true;
 		return localNameValues().includes(name);
 	};
 	const maybeRegisterCustomFactory = (
@@ -65,7 +69,27 @@ export function extractAtoms(filePath: string): ExtractedFile {
 		arguments: Argument[];
 	}> = [];
 
+	const isTopLevelVariableDeclarator = (variable: VariableDeclarator) => {
+		const declarationParent = parentMap.get(variable);
+		if (!declarationParent || declarationParent.type !== "VariableDeclaration") {
+			return false;
+		}
+		const container = parentMap.get(declarationParent);
+		if (!container) return false;
+		if (container.type === "Program") return true;
+		if (
+			container.type === "ExportNamedDeclaration" ||
+			container.type === "ExportDefaultDeclaration"
+		) {
+			const programParent = parentMap.get(container);
+			return programParent?.type === "Program";
+		}
+		return false;
+	};
+
 	parseAndWalk(code, filePath, (node, parent) => {
+		if (parent) parentMap.set(node as Node, parent as Node);
+
 		if (
 			node.type === "ImportSpecifier" &&
 			parent?.type === "ImportDeclaration"
@@ -105,7 +129,8 @@ export function extractAtoms(filePath: string): ExtractedFile {
 			if (node.callee.type === "Identifier") {
 				if (
 					parent?.type === "VariableDeclarator" &&
-					parent.id.type === "Identifier"
+					parent.id.type === "Identifier" &&
+					isTopLevelVariableDeclarator(parent)
 				) {
 					potentialAtoms.push({
 						callee: node.callee.name,
