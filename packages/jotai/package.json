@@ -1,6 +1,6 @@
 {
 	"name": "@state-tracer/jotai",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Visualize and trace state dependencies in jotai with an interactive data flow graph.",
 	"type": "module",
 	"main": "dist/index.js",

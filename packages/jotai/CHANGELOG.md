@@ -1,5 +1,11 @@
 # @state-tracer/jotai
 
+## 1.1.0
+
+### Minor Changes
+
+- 5fb1018: feat(jotai): detect custom atomWith helpers via AST
+
 ## 1.0.2
 
 ### Patch Changes
