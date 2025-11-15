@@ -16,7 +16,7 @@ export async function run(args: CliArgs) {
 
 	const atomCount = extractResults
 		.map((result) => result.atoms.length)
-		.reduce((a, b) => a + b, 0);
+		.reduce((total: number, count: number) => total + count, 0);
 	console.log(
 		`-------------
 atom count: ${atomCount}`,
