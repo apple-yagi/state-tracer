@@ -1,6 +1,11 @@
 import { readFileSync } from "node:fs";
-import { parseAndWalk } from "oxc-walker";
-import type { Argument } from "oxc-parser";
+import { parseAndWalk, walk } from "oxc-walker";
+import type {
+	Argument,
+	ArrowFunctionExpression,
+	Function as FunctionNode,
+	FunctionBody,
+} from "oxc-parser";
 
 export type ExtractResult = {
 	name: string;
@@ -8,9 +13,15 @@ export type ExtractResult = {
 	filePath: string;
 };
 
-export function extractAtoms(filePath: string) {
-	const code = readFileSync(filePath, "utf-8");
+type FunctionLike = FunctionNode | ArrowFunctionExpression;
 
+type ExtractedFile = {
+	filePath: string;
+	atoms: ExtractResult[];
+};
+
+export function extractAtoms(filePath: string): ExtractedFile {
+	const code = readFileSync(filePath, "utf-8");
 	const localNames = {
 		atom: "",
 		atomFamily: "",
@@ -22,9 +33,37 @@ export function extractAtoms(filePath: string) {
 		atomWithObservable: "",
 		atomWithReset: "",
 	};
-	const localNameKeys = Object.keys(localNames);
+	const jotaiUtilsFactories = Object.keys(localNames).filter(
+		(key) => key !== "atom",
+	);
+	const localNameValues = () =>
+		Object.values(localNames).filter((name): name is string => !!name);
+	const resolvedFactoryNames = new Set<string>();
+	const registerFactory = (name?: string) => {
+		if (name) resolvedFactoryNames.add(name);
+	};
+	const isAtomFactory = (name: string | undefined) => {
+		if (!name) return false;
+		if (resolvedFactoryNames.has(name)) return true;
+		return localNameValues().includes(name);
+	};
+	const maybeRegisterCustomFactory = (
+		name: string | undefined,
+		node: FunctionLike,
+	) => {
+		if (!name) return;
+		if (!name.startsWith("atomWith")) return;
+		if (functionReturnsAtomFactory(node, isAtomFactory)) {
+			registerFactory(name);
+		}
+	};
 
 	const atoms: ExtractResult[] = [];
+	const potentialAtoms: Array<{
+		callee: string;
+		name: string;
+		arguments: Argument[];
+	}> = [];
 
 	parseAndWalk(code, filePath, (node, parent) => {
 		if (
@@ -35,42 +74,112 @@ export function extractAtoms(filePath: string) {
 			const local = node.local.name;
 			const source = parent.source.value;
 
-			if (source === "jotai") {
-				if (imported.type === "Identifier") {
-					if (imported.name === "atom") localNames.atom = local;
-				}
-			} else if (source === "jotai/utils") {
-				if (imported.type === "Identifier") {
-					if (localNameKeys.includes(imported.name)) {
+			if (imported.type === "Identifier") {
+				if (source === "jotai" && imported.name === "atom") {
+					localNames.atom = local;
+					registerFactory(local);
+				} else if (source === "jotai/utils") {
+					if (jotaiUtilsFactories.includes(imported.name)) {
 						localNames[imported.name as keyof typeof localNames] = local;
+						registerFactory(local);
 					}
 				}
+			}
+		}
+
+		if (node.type === "FunctionDeclaration") {
+			maybeRegisterCustomFactory(node.id?.name, node);
+		}
+
+		if (node.type === "VariableDeclarator" && node.id.type === "Identifier") {
+			const calleeName = node.id.name;
+			if (
+				node.init?.type === "FunctionExpression" ||
+				node.init?.type === "ArrowFunctionExpression"
+			) {
+				maybeRegisterCustomFactory(calleeName, node.init);
 			}
 		}
 
 		if (node.type === "CallExpression") {
 			if (node.callee.type === "Identifier") {
 				if (
-					Object.values(localNames).includes(node.callee.name) &&
-					parent?.type === "VariableDeclarator"
+					parent?.type === "VariableDeclarator" &&
+					parent.id.type === "Identifier"
 				) {
-					if (
-						Object.values(localNames).includes(node.callee.name) &&
-						parent.id.type === "Identifier"
-					) {
-						atoms.push({
-							name: parent.id.name,
-							arguments: node.arguments,
-							filePath,
-						});
-					}
+					potentialAtoms.push({
+						callee: node.callee.name,
+						name: parent.id.name,
+						arguments: node.arguments,
+					});
 				}
 			}
 		}
 	});
 
+	for (const candidate of potentialAtoms) {
+		if (isAtomFactory(candidate.callee)) {
+			atoms.push({
+				name: candidate.name,
+				arguments: candidate.arguments,
+				filePath,
+			});
+		}
+	}
+
 	return {
 		filePath,
 		atoms,
 	};
+}
+
+function functionReturnsAtomFactory(
+	fn: FunctionLike,
+	isAtomFactory: (name: string | undefined) => boolean,
+) {
+	const isFactoryCallExpression = (expr: unknown): boolean => {
+		if (expr && typeof expr === "object") {
+			const callExpr = expr as { type?: string; callee?: unknown };
+			if (
+				callExpr.type === "CallExpression" &&
+				callExpr.callee &&
+				typeof callExpr.callee === "object" &&
+				(callExpr.callee as { type?: string }).type === "Identifier"
+			) {
+				const identifier = callExpr.callee as { name?: string };
+				return isAtomFactory(identifier.name);
+			}
+		}
+		return false;
+	};
+
+	const blockContainsFactoryCall = (body: FunctionBody): boolean => {
+		let returnsFactory = false;
+		walk(body, {
+			enter(node) {
+				if (node.type === "ReturnStatement" && node.argument) {
+					if (isFactoryCallExpression(node.argument)) {
+						returnsFactory = true;
+					}
+				}
+			},
+		});
+
+		return returnsFactory;
+	};
+
+	if (fn.type === "ArrowFunctionExpression") {
+		if (fn.expression) {
+			return isFactoryCallExpression(fn.body);
+		}
+
+		if (fn.body.type === "BlockStatement") {
+			return blockContainsFactoryCall(fn.body);
+		}
+
+		return false;
+	}
+
+	if (!fn.body) return false;
+	return blockContainsFactoryCall(fn.body);
 }
