@@ -1,5 +1,13 @@
 # @state-tracer/jotai
 
+## 1.1.2
+
+### Patch Changes
+
+- f65a5fd: Exclude node_modules and .git from file traversal to speed up scans
+- Updated dependencies [f65a5fd]
+  - @state-tracer/core@0.1.2
+
 ## 1.1.1
 
 ### Patch Changes
