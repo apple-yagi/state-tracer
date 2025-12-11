@@ -1,5 +1,13 @@
 # state-tracer-recoil
 
+## 1.0.4
+
+### Patch Changes
+
+- f65a5fd: Exclude node_modules and .git from file traversal to speed up scans
+- Updated dependencies [f65a5fd]
+  - @state-tracer/core@0.1.2
+
 ## 1.0.3
 
 ### Patch Changes
